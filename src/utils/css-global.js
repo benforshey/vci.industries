@@ -1,3 +1,4 @@
+
 export const fonts = `
 font-family: 'Source Sans Pro';
 src: url('src/fonts/source-sans-pro/SourceSansPro-Bold.woff2') format('woff2'),
@@ -69,6 +70,7 @@ display: block;
 }
 ol, ul {
 list-style: none;
+margin-bottom: 1em;
 }
 blockquote, q {
 quotes: none;
@@ -111,6 +113,7 @@ h4 {
   font-size: 2.25em;
   font-weight: 400;
   line-height: 1;
+  margin: 1.5em 0 .5em;
 }
 
 h2 {
@@ -129,6 +132,10 @@ h3 {
 
 h4 {
   font-size: 1.25em;
+}
+
+p {
+  margin-bottom: 1em;
 }
 
 @media screen and (min-width: 25em) {

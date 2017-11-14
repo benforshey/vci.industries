@@ -14,7 +14,8 @@ const StyledAnchorButton = styled(AnchorLink)`
   font-weight: 600;
   font-size: inherit;
   line-height: 1;
-  padding: .5em .75em;
+  margin: 1em 0;
+  padding: .35em .5em;
   text-decoration: none;
   transition: background .2s ease-in-out, box-shadow .2s ease-in-out, transform .2s ease-in-out;
 

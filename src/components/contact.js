@@ -5,7 +5,8 @@ import styled from 'styled-components'
 import 'whatwg-fetch'
 
 const Form = styled.form`
-  padding: 0 4vw;
+  background: hsl(0, 0%, 97%);
+  padding: 1em 4vw;
 `
 
 const FormGroup = styled.p`
@@ -18,6 +19,7 @@ const Input = styled.input`
   border: hidden;
   box-shadow: 0 2px 0 0 black;
   display: block;
+  font-size: inherit;
   width: 100%;
 
   &:focus,
@@ -42,6 +44,7 @@ const TextArea = styled.textarea`
   border: hidden;
   box-shadow: 2px 2px 0 0 black;
   display: block;
+  font-size: inherit;
   height: 6em;
   resize: none;
   width: 100%;
@@ -65,10 +68,10 @@ const TextArea = styled.textarea`
 `
 
 const Label = styled.label`
+  font-weight: 700;
   left: 0;
   position: absolute;
   top: 0;
-  text-transform: uppercase;
   transition: transform .2s ease-out;
   user-select: none;
   z-index: -1;
@@ -76,6 +79,8 @@ const Label = styled.label`
 
 const Hint = styled.span`
   display: block;
+  font-size: .875em;
+  font-style: italic;
   margin-top: .25em;
   user-selec: none;
 `
@@ -166,6 +171,7 @@ class Contact extends React.Component {
         onSubmit={this.handleSubmit}
         noValidate
       >
+        <h2>Contact Us</h2>
         <FormGroup>
           <Input id='name' name='name' type='text' autoComplete='name' value={this.state.name} onChange={this.handleChange} onFocus={this.handleFocus} required />
           <Label htmlFor='name'>Name</Label>

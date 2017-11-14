@@ -28,6 +28,7 @@ const Nav = styled.nav`
 
   @media (min-width: 43.75em) {
     flex: 0 1 50%;
+    margin-top: 0;
   }
 
   @media (min-width: 62.5em) {

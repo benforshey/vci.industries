@@ -2,8 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Footer = styled.footer`
-  background: tomato;
-  height: 10em;
+  color: hsl(0, 0%, 100%);
+  background: hsl(270, 2%, 25%);
+  padding: 1em 4vw;
+  margin-top: 14vw;
+
+  & a {
+    color: hsl(0, 0%, 100%);
+  }
 `
 
 const FooterComponent = () => (
