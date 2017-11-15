@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Header from '../components/header'
 
 import './global.css'
-import logo from '../images/logo-large.svg'
+import logo from '../images/logo_dark.svg'
 
 const TemplateWrapper = ({ children, data }) => {
   return (

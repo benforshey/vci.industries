@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import styled from 'styled-components'
-import logo from '../images/logo-large.svg'
+import logo from '../images/logo_dark.svg'
 
 const Header = styled.header`
   align-items: center;

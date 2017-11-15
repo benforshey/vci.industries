@@ -118,12 +118,7 @@ const DarkSection = Section.extend`
     margin-top: .5em;
   }
 
-  & div {
-    flex: 0 1 30%;
-  }
-
   & > ul {
-    align-content: space-around;
     align-items: baseline;
     display: flex;
     flex-wrap: wrap;
