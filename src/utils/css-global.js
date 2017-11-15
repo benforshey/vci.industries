@@ -1,40 +1,49 @@
-
 export const fonts = `
-font-family: 'Source Sans Pro';
-src: url('src/fonts/source-sans-pro/SourceSansPro-Bold.woff2') format('woff2'),
-     url('src/fonts/source-sans-pro/SourceSansPro-Bold.woff') format('woff');
-font-weight: 700;
-font-style: normal;
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../fonts/source-sans-pro/SourceSansPro-Bold.woff2') format('woff2'),
+      url('../fonts/source-sans-pro/SourceSansPro-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
 
-font-family: 'Source Sans Pro';
-src: url('src/fonts/source-sans-pro/SourceSansPro-SemiBold.woff2') format('woff2'),
-     url('src/fonts/source-sans-pro/SourceSansPro-SemiBold.woff') format('woff');
-font-weight: 600;
-font-style: normal;
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../fonts/source-sans-pro/SourceSansPro-SemiBold.woff2') format('woff2'),
+      url('../fonts/source-sans-pro/SourceSansPro-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
 
-font-family: 'Source Sans Pro';
-src: url('src/fonts/source-sans-pro/SourceSansPro-SemiBoldItalic.woff2') format('woff2'),
-     url('src/fonts/source-sans-pro/SourceSansPro-SemiBoldItalic.woff') format('woff');
-font-weight: 600;
-font-style: italic;
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../fonts/source-sans-pro/SourceSansPro-SemiBoldItalic.woff2') format('woff2'),
+      url('../fonts/source-sans-pro/SourceSansPro-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
 
-font-family: 'Source Sans Pro';
-src: url('src/fonts/source-sans-pro/SourceSansPro-Regular.woff2') format('woff2'),
-     url('src/fonts/source-sans-pro/SourceSansPro-Regular.woff') format('woff');
-font-weight: 400;
-font-style: normal;
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../fonts/source-sans-pro/SourceSansPro-Regular.woff2') format('woff2'),
+      url('../fonts/source-sans-pro/SourceSansPro-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 
-font-family: 'Source Sans Pro';
-src: url('src/fonts/source-sans-pro/SourceSansPro-Italic.woff2') format('woff2'),
-     url('src/fonts/source-sans-pro/SourceSansPro-Italic.woff') format('woff');
-font-weight: 400;
-font-style: italic;
-
-font-family: 'Russo One';
-src: url('src/fonts/russo-one/RussoOne-Regular.woff2') format('woff2'),
-     url('src/fonts/russo-one/RussoOne-Regular.woff') format('woff');
-font-weight: 400;
-font-style: normal;
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../fonts/source-sans-pro/SourceSansPro-Italic.woff2') format('woff2'),
+      url('../fonts/source-sans-pro/SourceSansPro-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Russo One';
+  src: url('../fonts/russo-one/RussoOne-Regular.woff2') format('woff2'),
+      url('../fonts/russo-one/RussoOne-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 `
 

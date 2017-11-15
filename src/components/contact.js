@@ -16,8 +16,11 @@ const FormGroup = styled.p`
 
 const Input = styled.input`
   background: none;
-  border: hidden;
-  box-shadow: 0 2px 0 0 black;
+  border-radius: 0;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid hsl(180, 0%, 39%);
   display: block;
   font-size: inherit;
   width: 100%;
@@ -25,10 +28,6 @@ const Input = styled.input`
   &:focus,
   &:active {
     outline: none;
-  }
-
-  &:valid {
-    background: white;
   }
 
   &:focus + label {
@@ -41,8 +40,11 @@ const Input = styled.input`
 `
 const TextArea = styled.textarea`
   background: none;
-  border: hidden;
-  box-shadow: 2px 2px 0 0 black;
+  border-radius: 0;
+  border-top: none;
+  border-right: 2px solid hsl(180, 0%, 39%);
+  border-left: none;
+  border-bottom: 2px solid hsl(180, 0%, 39%);
   display: block;
   font-size: inherit;
   height: 6em;
@@ -74,7 +76,7 @@ const Label = styled.label`
   top: 0;
   transition: transform .2s ease-out;
   user-select: none;
-  z-index: -1;
+  ${'' /* z-index: -1; */}
 `
 
 const Hint = styled.span`

@@ -2,23 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
-import styled, { injectGlobal } from 'styled-components'
-import { fonts, reset, common } from '../utils/css-global'
 
 import logo from '../images/logo-large.svg'
 
-injectGlobal`
-  ${reset}
-  ${fonts}
-  ${common}
-`
-const App = styled.div`
-
-`
+import '../utils/global.css'
 
 const TemplateWrapper = ({ children, data }) => {
   return (
-    <App>
+    <div>
       <Helmet
         title={data.site.siteMetadata.title}
       >
@@ -36,7 +27,7 @@ const TemplateWrapper = ({ children, data }) => {
       </Helmet>
       <Header />
       {children()}
-    </App>
+    </div>
   )
 }
 
