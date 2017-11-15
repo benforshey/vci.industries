@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import 'whatwg-fetch'
 
 const Form = styled.form`
-  background: hsl(0, 0%, 97%);
   padding: 1em 4vw;
 `
 
@@ -76,7 +75,6 @@ const Label = styled.label`
   top: 0;
   transition: transform .2s ease-out;
   user-select: none;
-  ${'' /* z-index: -1; */}
 `
 
 const Hint = styled.span`
@@ -87,7 +85,7 @@ const Hint = styled.span`
   user-selec: none;
 `
 
-class Contact extends React.Component {
+class FormComponent extends React.Component {
   constructor (props) {
     super(props)
 
@@ -173,7 +171,6 @@ class Contact extends React.Component {
         onSubmit={this.handleSubmit}
         noValidate
       >
-        <h2>Contact Us</h2>
         <FormGroup>
           <Input id='name' name='name' type='text' autoComplete='name' value={this.state.name} onChange={this.handleChange} onFocus={this.handleFocus} required />
           <Label htmlFor='name'>Name</Label>
@@ -205,4 +202,4 @@ class Contact extends React.Component {
   }
 }
 
-export default Contact
+export default FormComponent

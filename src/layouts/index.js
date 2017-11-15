@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
 
+import './global.css'
 import logo from '../images/logo-large.svg'
-
-import '../utils/global.css'
 
 const TemplateWrapper = ({ children, data }) => {
   return (

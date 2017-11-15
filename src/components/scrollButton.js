@@ -10,6 +10,7 @@ const StyledAnchorButton = styled(AnchorLink)`
   box-shadow: 2px 3px 2px 0 hsla(270, 2%, 25%, .3);
   color: #353535;
   cursor: pointer;
+  display: inline-block;
   font-family: inherit;
   font-weight: 600;
   font-size: inherit;

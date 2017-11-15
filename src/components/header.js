@@ -63,10 +63,10 @@ const HeaderComponent = () => (
     <StyledLink to='/'><Image src={logo} alt='Victor Concrete, Inc. (VCI)' /></StyledLink>
     <Nav role='navigation'>
       <Ul>
-        <li><StyledAnchorLink href='#footer'>BENEFITS</StyledAnchorLink></li>
-        <li><StyledAnchorLink href='#footer'>QUALITY</StyledAnchorLink></li>
-        <li><StyledAnchorLink href='#footer'>CLIENTS</StyledAnchorLink></li>
-        <li><StyledAnchorLink href='#footer'>CONTACT</StyledAnchorLink></li>
+        <li><StyledAnchorLink href='#quality'>QUALITY</StyledAnchorLink></li>
+        <li><StyledAnchorLink href='#benefits'>BENEFITS</StyledAnchorLink></li>
+        <li><StyledAnchorLink href='#clients'>CLIENTS</StyledAnchorLink></li>
+        <li><StyledAnchorLink href='#form'>CONTACT</StyledAnchorLink></li>
       </Ul>
     </Nav>
   </Header>
