@@ -29,6 +29,10 @@ const Input = styled.input`
     outline: none;
   }
 
+  &:invalid {
+    box-shadow: none;
+  }
+
   &:focus + label {
     transform: translateY(-1.25em);
   }
@@ -55,8 +59,8 @@ const TextArea = styled.textarea`
     outline: none;
   }
 
-  &:valid {
-    background: white;
+  &:invalid {
+    box-shadow: none;
   }
 
   &:focus + label {

@@ -9,7 +9,7 @@ import heroImageMedium from '../images/hero-image_medium.jpg'
 import heroImageSmall from '../images/hero-image_small.jpg'
 import heroDecoratorTopRight from '../images/hero_top-right.svg'
 import heroDecoratorBottom from '../images/hero_bottom.svg'
-import bullet from '../images/bullet.svg'
+import bullet from '../images/bullet.png'
 import emailDecorator from '../images/email.svg'
 import contactDecorator from '../images/contact_left.svg'
 
@@ -73,7 +73,14 @@ const HeroTitle = styled.h1`
 
 const Section = styled.section`
   margin: 0 auto;
+  max-width: 37.5em;
   padding: 1em 4vw;
+
+  @supports (display: grid) {
+    @media (min-width: 50em) {
+      max-width: none;
+    }
+  }
 `
 const GreySection = Section.extend`
   background: hsl(0, 0%, 97%);
@@ -81,21 +88,51 @@ const GreySection = Section.extend`
 
 const QualitySection = Section.extend`
 
-  & p {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 37.5em;
-  }
-
   & ul {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 37.5em;
+    margin-left: 2em;
   }
 
   .gatsby-image-outer-wrapper {
     margin: 1em auto;
     max-width: 37.5em;
+  }
+
+  @media (min-width: 50em) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    & h2 {
+      grid-column: 1 / span 4;
+    }
+
+    & p {
+      grid-column: 1 / span 2;
+    }
+
+    & > .gatsby-image-outer-wrapper {
+      align-self: center;
+      grid-column: 3 / span 2;
+      margin: 0 0 0 1em;
+
+      &:first-of-type {
+        grid-row: 2 / span 2;
+      }
+
+      &:last-of-type {
+        grid-row: 4 / span 2;
+      }
+    }
+
+    & ul {
+      grid-column: 1 / span 2;
+    }
+
+    & a {
+      align-self: start;
+      grid-column: 1;
+      justify-self: start;
+    }
   }
 
 `
@@ -130,20 +167,13 @@ const DarkSection = Section.extend`
 `
 
 const BenefitsSection = GreySection.extend`
-  & > p {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 37.5em;
-  }
-
-  & > blockquote {
+  & blockquote {
     margin: 4em auto 1em;
-    max-width: 37.5em;
     padding-left: 2em;
     position: relative;
   }
 
-  & > blockquote::before {
+  & blockquote::before {
     color: hsl(183, 73%, 32%);
     content: '“';
     font-family: 'Russo One', 'Arial Bold', serif;
@@ -154,27 +184,48 @@ const BenefitsSection = GreySection.extend`
     left: -.5rem;
   }
 
-  & > blockquote > cite {
+  & blockquote > cite {
     display: block;
     font-weight: 600;
     font-style: italic;
+    margin-top: .5em;
     position: relative;
     text-align: right;
   }
 
-  .gatsby-image-outer-wrapper {
+  & .gatsby-image-outer-wrapper {
     margin: 1em auto;
-    max-width: 37.5em;
-
   }
 
   @media (min-width: 50em) {
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    & h2 {
+      grid-column: 1 / span 4;
+    }
+
+    & p {
+      grid-column: 1 / span 2;
+    }
 
     & .gatsby-image-outer-wrapper {
-      position: absolute;
-      top: 0;
-      right: 0;
+      align-self: center;
+      grid-column: 3 / span 2;
+      grid-row: 2 / span 3;
+      margin: 0 0 0 1em;
+    }
+
+    & blockquote {
+      grid-column: 1 / span 2;
+    }
+
+    & a {
+      align-self: start;
+      grid-column: 1;
+      justify-self: start;
+      margin-top: 0;
     }
   }
 `
@@ -204,22 +255,24 @@ const ContactSection = GreySection.extend`
   }
 
   @media (min-width: 50em) {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
 
     & > h2 {
-      flex: 1 0 100%;
+      grid-column: 1 / span 2;
     }
 
     & > .gatsby-image-outer-wrapper {
-      flex: 0 1 50%;
-      order: 1;
+      align-self: center;
+      grid-column: 2;
+      grid-row: 2;
+      margin: 0 0 0 1em;
     }
 
     & > form {
-      flex: 0 1 50%;
+      grid-column: 1;
+      grid-row: 2;
     }
   }
 `
@@ -315,7 +368,7 @@ const IndexPage = ({ data }) => {
         <Image sizes={pour[0].localFile.childImageSharp.sizes} alt={pour[0]['alt_text']} />
         <blockquote>
           The materials and services that VICTOR Concrete has provided are of high quality and their work is performed with attention to detail and accuracy. [We intend] to continue our collaboration and working relationship with VICTOR Concrete on future projects and cherish our mutually established partnership.
-          <cite>Stephen Adams, President of Pacific Sundance Construction</cite>
+          <cite>&mdash;Stephen Adams, President of Pacific Sundance Construction</cite>
         </blockquote>
         <ScrollButton text='Contact Us' href='#form' />
       </BenefitsSection>
