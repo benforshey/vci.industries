@@ -97,14 +97,9 @@ class FormComponent extends React.Component {
       feedback: ''
     }
 
-    this.handleFocus = this.handleFocus.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.determineContactType = this.determineContactType.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  handleFocus (e) {
-
   }
 
   handleChange (e) {
@@ -169,25 +164,24 @@ class FormComponent extends React.Component {
         action='https://message.integrisweb.com/mail/'
         method='post'
         onSubmit={this.handleSubmit}
-        noValidate
       >
         <FormGroup>
-          <Input id='name' name='name' type='text' autoComplete='name' value={this.state.name} onChange={this.handleChange} onFocus={this.handleFocus} required />
+          <Input id='name' name='name' type='text' autoComplete='name' value={this.state.name} onChange={this.handleChange} required />
           <Label htmlFor='name'>Name</Label>
           <Hint>What is your full name?</Hint>
         </FormGroup>
         <FormGroup>
-          <Input id='contact' name='contact' type='text' autoComplete='email' onInput={this.determineContactType} value={this.state.contact} onChange={this.handleChange} onFocus={this.handleFocus} required />
+          <Input id='contact' name='contact' type='text' autoComplete='email' onInput={this.determineContactType} value={this.state.contact} onChange={this.handleChange} required />
           <Label htmlFor='contact'>Contact Information</Label>
           <Hint>How can we reach you for reply?</Hint>
         </FormGroup>
         <FormGroup>
-          <Input id='company' name='company' type='text' autoComplete='organization' value={this.state.company} onChange={this.handleChange} onFocus={this.handleFocus} required />
+          <Input id='company' name='company' type='text' autoComplete='organization' value={this.state.company} onChange={this.handleChange} required />
           <Label htmlFor='company'>Company</Label>
           <Hint>What company do you represent?</Hint>
         </FormGroup>
         <FormGroup>
-          <TextArea id='message' name='message' spellCheck='true' value={this.state.message} onChange={this.handleChange} onFocus={this.handleFocus} required />
+          <TextArea id='message' name='message' spellCheck='true' value={this.state.message} onChange={this.handleChange} required />
           <Label htmlFor='message'>Message</Label>
           <Hint>What can we do for you?</Hint>
         </FormGroup>

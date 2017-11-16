@@ -20,10 +20,12 @@ const StyledAnchorButton = styled(AnchorLink)`
   text-decoration: none;
   transition: background .2s ease-in-out, box-shadow .2s ease-in-out, transform .2s ease-in-out;
 
-  &:hover,
-  &:focus {
+  &:hover {
     box-shadow: 3px 4px 3px 1px hsla(270, 2%, 25%, .3);
     transform: translateY(-1px);
+  }
+
+  &:focus {
     outline: 2px solid hsl(183, 73%, 32%);
   }
 

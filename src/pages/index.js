@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ScrollButton from '../components/scrollButton'
-// import Button from '../components/button'
 import FormComponent from '../components/form'
-import Footer from '../components/footer'
 import Image from 'gatsby-image'
 
 import heroImageLarge from '../images/hero-image_large.jpg'
@@ -353,7 +351,6 @@ const IndexPage = ({ data }) => {
         <Image sizes={contact[0].localFile.childImageSharp.sizes} alt={contact[0]['alt_text']} />
         <FormComponent />
       </ContactSection>
-      <Footer />
     </main>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
+import Footer from '../components/footer'
 
 import './global.css'
 import logo from '../images/logo_dark.svg'
@@ -49,6 +50,7 @@ const TemplateWrapper = ({ children, data }) => {
       </Helmet>
       <Header />
       {children()}
+      <Footer />
     </div>
   )
 }
