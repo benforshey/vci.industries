@@ -178,7 +178,7 @@ class FormComponent extends React.Component {
         </FormGroup>
         <FormGroup>
           <Input id='contact' name='contact' type='text' autoComplete='email' onInput={this.determineContactType} value={this.state.contact} onChange={this.handleChange} onFocus={this.handleFocus} required />
-          <Label htmlFor='message'>Contact Information</Label>
+          <Label htmlFor='contact'>Contact Information</Label>
           <Hint>How can we reach you for reply?</Hint>
         </FormGroup>
         <FormGroup>
