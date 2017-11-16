@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `VCI Industries`,
-    description: ``,
+    title: `Concrete Services | VCI `,
+    description: `VCI specializes in concrete paving and other specialty concrete services for federal, state, and a wide range of commercial clients in California.`,
     siteUrl: `https://www.vci.industries`
   },
   plugins: [
