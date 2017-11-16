@@ -31,6 +31,12 @@ const TemplateWrapper = ({ children, data }) => {
         <meta property='og:title' content='Victor Concrete, Inc. (VCI)' />
         <meta property='og:url' content='https://www.vci.industries/' />
 
+        <meta name='twitter:card' content='summary' />
+        <meta name='twitter:site' content='https://www.vci.industries/' />
+        <meta name='twitter:title' content='Victor Concrete, Inc. (VCI)' />
+        <meta name='twitter:description' content='Founded in 1989, VICTOR Concrete, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in concrete paving and other specialty concrete services for federal, state, and a wide range of commercial clients in California.' />
+        <meta name='twitter:image' content='/og-image.jpg' />
+
         <script type='application/ld+json'>
           {`{"@context":"http://schema.org", "@type":"WebSite", "url":"https://www.vci.industries", "name":"Victor Concrete, Inc. (VCI)", "description":"${data.site.siteMetadata.description}", "image":"${logo}"}`}
         </script>
