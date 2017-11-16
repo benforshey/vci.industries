@@ -1,11 +1,12 @@
 // /*eslint-env browser*/
 import React from 'react'
 import Button from '../components/button'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import 'whatwg-fetch'
 
 const Form = styled.form`
   padding: 1em 4vw;
+  position: relative;
 `
 
 const FormGroup = styled.p`
@@ -89,6 +90,29 @@ const Hint = styled.span`
   user-selec: none;
 `
 
+const gracefulAppear = keyframes`
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 100vh;
+    opacity: 1;
+  }
+`
+
+const Feedback = styled.p`
+  animation: ${gracefulAppear} .4s ease-out;
+  background: #ffffff;
+  border: 2px solid hsl(183, 73%, 32%);
+  font-family: monospace;
+  margin: 0;
+  position: absolute;
+  bottom: -4.5em;
+  left: 4vw;
+  padding: 1em;
+`
+
 class FormComponent extends React.Component {
   constructor (props) {
     super(props)
@@ -112,16 +136,20 @@ class FormComponent extends React.Component {
 
   // Quick and dirty autocomplete detection.
   determineContactType (e) {
+    const attr = e.target.getAttribute('autocomplete')
+
     // If there's an ampersand, this is an email address. Return early.
     if (/@/.test(e.target.value)) {
-      // e.target.setAttribute('type', 'email')
-      return e.target.setAttribute('autocomplete', 'email')
+      return attr === 'tel'
+        ? e.target.setAttribute('autocomplete', 'email')
+        : null
     }
 
     // There are digits, so this might be a telephone number.
     if (/^(\+|\d|\()/.test(e.target.value)) {
-      // e.target.setAttribute('type', 'tel')
-      return e.target.setAttribute('autocomplete', 'tel')
+      return attr === 'email'
+        ? e.target.setAttribute('autocomplete', 'tel')
+        : null
     }
   }
 
@@ -148,15 +176,14 @@ class FormComponent extends React.Component {
         // Message was sent successfully, so clear the success message.
         return setTimeout(() => {
           this.setState({ feedback: '' })
-        }, 3000)
-      } else {
-        // The message is in limbo.
-        return this.setState({ feedback: `Sorry, but it looks like your message hasn’t sent yet. This could mean that the connection between you and our server is slow (maybe you’re offline?), or it could be that we’re having some serious problems. If this message doesn’t go away, please reach out to us using the information at the bottom of this page.` })
+        }, 10000)
       }
     })
     .catch(err => {
+      console.error(err)
+
       this.setState({
-        feedback: `Sorry, we could’t send your message because of the following error: ${err}. Please reach out to us using the information at the bottom of this page.`
+        feedback: `Sorry, we could’t send your message. Please try again later or contact us using the information at the bottom of this page.`
       })
     })
   }
@@ -190,11 +217,7 @@ class FormComponent extends React.Component {
           <Hint>What can we do for you?</Hint>
         </FormGroup>
         <Button type='submit' form='form' text='Send Message' />
-        {this.state.feedback ? (
-          <p>{this.state.feedback}</p>
-        ) : (
-          ''
-        )}
+        {this.state.feedback ? <Feedback>{this.state.feedback}</Feedback> : null }
       </Form>
     )
   }
