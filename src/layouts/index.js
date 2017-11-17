@@ -4,8 +4,12 @@ import Helmet from 'react-helmet'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
-import './global.css'
 import logo from '../images/logo_dark.svg'
+
+require('typeface-russo-one')
+require('typeface-source-sans-pro')
+require('./global.css')
+// import './global.css'
 
 const TemplateWrapper = ({ children, data }) => {
   return (
