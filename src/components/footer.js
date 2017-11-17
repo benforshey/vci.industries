@@ -85,6 +85,10 @@ const FooterComponent = () => (
         <a href='mailto:marketing@vci.industries'>marketing@vci.industries</a>
       </address>
     </div>
+    <div>
+      <h3>Documents</h3>
+      <a href='/documents/VCI_Capability_Statement.pdf' download>Capability Statement</a>
+    </div>
     <CenteredCopyright>
       &copy; 1989&ndash;{new Date().getFullYear()} Victor Concrete, Inc. (VCI). All rights reserved.
     </CenteredCopyright>
