@@ -9,7 +9,6 @@ import logo from '../images/logo_dark.svg'
 require('typeface-russo-one')
 require('typeface-source-sans-pro')
 require('./global.css')
-// import './global.css'
 
 const TemplateWrapper = ({ children, data }) => {
   return (
