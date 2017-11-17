@@ -4,9 +4,6 @@ import ScrollButton from '../components/scrollButton'
 import FormComponent from '../components/form'
 import Image from 'gatsby-image'
 
-import heroImageLarge from '../images/hero-image_large.jpg'
-import heroImageMedium from '../images/hero-image_medium.jpg'
-import heroImageSmall from '../images/hero-image_small.jpg'
 import heroDecoratorTopRight from '../images/hero_top-right.svg'
 import heroDecoratorBottom from '../images/hero_bottom.svg'
 import bullet from '../images/bullet.png'
@@ -15,10 +12,7 @@ import contactDecorator from '../images/contact_left.svg'
 
 const Hero = styled.div`
   align-items: center;
-  background-image: linear-gradient(to right, hsla(183, 71%, 15%, .6), hsla(179, 71%, 15%, .6)), url(${heroImageSmall});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: linear-gradient(to right, hsla(183, 71%, 15%, .6), hsla(179, 71%, 15%, .6));
   display: flex;
   flex-direction: column;
   height: 60vw;
@@ -38,6 +32,7 @@ const Hero = styled.div`
     right: 0;
     top: 0;
     width: 33%;
+    z-index: 1;
   }
 
   &::after {
@@ -51,15 +46,14 @@ const Hero = styled.div`
     padding-bottom: 8vw;
     position: absolute;
     width: 100%;
+    z-index: 1;
   }
 
   @media (min-width: 30em) {
-    background-image: linear-gradient(to right, hsla(183, 71%, 15%, .6), hsla(179, 71%, 15%, .6)), url(${heroImageMedium});
     height: 50vw;
   }
 
   @media (min-width: 60em) {
-    background-image: linear-gradient(to right, hsla(183, 71%, 15%, .6), hsla(179, 71%, 15%, .6)), url(${heroImageLarge});
     height: 40vw;
   }
 `
@@ -69,6 +63,32 @@ const HeroTitle = styled.h1`
   font-size: calc(.75em + 2vw);
   letter-spacing: 1px;
   text-align: center;
+`
+
+const HeroImage = styled.div`
+  height: 60vw;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+
+  & .gatsby-image-outer-wrapper {
+    top: -10vw;
+  }
+
+  @media (min-width: 30em) {
+    height: 50vw;
+  }
+
+  @media (min-width: 60em) {
+    height: 40vw;
+
+    & .gatsby-image-outer-wrapper {
+      top: -15vw;
+    }
+  }
 `
 
 const Section = styled.section`
@@ -82,6 +102,7 @@ const Section = styled.section`
     }
   }
 `
+
 const GreySection = Section.extend`
   background: hsl(0, 0%, 97%);
 `
@@ -314,12 +335,6 @@ function renderClientList (data) {
 
 const IndexPage = ({ data }) => {
   const date = `${new Date().getFullYear() - 1989} Years` || `Decades`
-  const images = data.wordpressPage.acf.images
-  const tiltUp = images.filter(image => image.title === 'tilt-up')
-  const spread = images.filter(image => image.title === 'concrete-spread')
-  const pour = images.filter(image => image.title === 'concrete-pour')
-  const contact = images.filter(image => image.title === 'contact-us')
-
   const clientList = renderClientList(data.allWordpressWpClient.edges)
 
   return (
@@ -327,11 +342,14 @@ const IndexPage = ({ data }) => {
       <Hero>
         <HeroTitle>{date} of Concrete Services. 8(a)&#8209;certified.</HeroTitle>
         <ScrollButton text='See Why 8(a) Matters' href='#benefits' />
+        <HeroImage>
+          <Image sizes={data.heroImage.localFile.childImageSharp.sizes} alt={data.heroImage.alt_text} />
+        </HeroImage>
       </Hero>
       <QualitySection id='quality'>
         <h2>Quality that Stands the Test of Time</h2>
         <p>Founded in 1989, VICTOR Concrete, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in concrete paving and other specialty concrete services for federal, state, and public works agencies and industrial and commercial clients in California. VCI provides quality workmanship at a fair price while protecting the health and safety of its employees and the surrounding community.</p>
-        <Image sizes={tiltUp[0].localFile.childImageSharp.sizes} alt={tiltUp[0]['alt_text']} />
+        <Image sizes={data.tiltUp.localFile.childImageSharp.sizes} alt={data.tiltUp.alt_text} />
         <p>VCI&rsquo;s team of concrete specialists adhere to ACI (American Concrete Institute), PCA (Portland Cement Association), and ASTM (American Society of Testing Materials) guidelines for properly placing concrete. VCI ensures:</p>
         <UL>
           <li>Proper preparation of the sub-base</li>
@@ -343,7 +361,7 @@ const IndexPage = ({ data }) => {
           <li>Quality finish work using ACI standards for proper techniques and tools for each slab&rsquo;s use and design</li>
           <li>Timely use of curing compounds and sealers</li>
         </UL>
-        <Image sizes={spread[0].localFile.childImageSharp.sizes} alt={spread[0]['alt_text']} />
+        <Image sizes={data.spread.localFile.childImageSharp.sizes} alt={data.spread.alt_text} />
         <ScrollButton text='Contact Us' href='#form' />
       </QualitySection>
       <DarkSection>
@@ -365,7 +383,7 @@ const IndexPage = ({ data }) => {
       <BenefitsSection id='benefits'>
         <h2>8(a) Benefits</h2>
         <p>VICTOR Concrete, Inc. (VCI) is a small, minority-owned, 8(a)-certified business. Federal agencies can contract with VCI directly using sole-source acquisition, with a $4M ceiling. 8(a) organizations can now bid in partnership with other organizations, greatly streamlining the process by which 8(a) contracts are awarded.</p>
-        <Image sizes={pour[0].localFile.childImageSharp.sizes} alt={pour[0]['alt_text']} />
+        <Image sizes={data.pour.localFile.childImageSharp.sizes} alt={data.pour.alt_text} />
         <blockquote>
           The materials and services that VICTOR Concrete has provided are of high quality and their work is performed with attention to detail and accuracy. [We intend] to continue our collaboration and working relationship with VICTOR Concrete on future projects and cherish our mutually established partnership.
           <cite>&mdash;Stephen Adams, President of Pacific Sundance Construction</cite>
@@ -401,7 +419,7 @@ const IndexPage = ({ data }) => {
       </Section>
       <ContactSection>
         <h2>Contact Us</h2>
-        <Image sizes={contact[0].localFile.childImageSharp.sizes} alt={contact[0]['alt_text']} />
+        <Image sizes={data.contact.localFile.childImageSharp.sizes} alt={data.contact.alt_text} />
         <FormComponent />
       </ContactSection>
     </main>
@@ -412,17 +430,56 @@ export default IndexPage
 
 export const query = graphql`
 query IndexPage {
-  wordpressPage(title: {eq: "Home Page"}) {
-    acf {
-      images {
-        title
-        alt_text
-        localFile {
-          childImageSharp {
-            sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes_tracedSVG
-            }
-          }
+  heroImage: wordpressWpMedia(title: {eq: "hero-image"}) {
+    alt_text
+    localFile {
+      childImageSharp {
+        sizes(maxWidth: 1920) {
+          ...GatsbyImageSharpSizes_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+
+  tiltUp: wordpressWpMedia(title: {eq: "tilt-up"}) {
+    alt_text
+    localFile {
+      childImageSharp {
+        sizes(maxWidth: 600) {
+          ...GatsbyImageSharpSizes_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+
+  spread: wordpressWpMedia(title: {eq: "concrete-spread"}) {
+    alt_text
+    localFile {
+      childImageSharp {
+        sizes(maxWidth: 600) {
+          ...GatsbyImageSharpSizes_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+
+  pour: wordpressWpMedia(title: {eq: "concrete-pour"}) {
+    alt_text
+    localFile {
+      childImageSharp {
+        sizes(maxWidth: 600) {
+          ...GatsbyImageSharpSizes_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+
+  contact: wordpressWpMedia(title: {eq: "contact-us"}) {
+    alt_text
+    localFile {
+      childImageSharp {
+        sizes(maxWidth: 600) {
+          ...GatsbyImageSharpSizes_withWebp_tracedSVG
         }
       }
     }
