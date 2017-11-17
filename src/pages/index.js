@@ -435,7 +435,7 @@ query IndexPage {
     localFile {
       childImageSharp {
         sizes(maxWidth: 1920) {
-          ...GatsbyImageSharpSizes
+          ...GatsbyImageSharpSizes_noBase64
         }
       }
     }
