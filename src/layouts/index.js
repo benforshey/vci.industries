@@ -5,10 +5,10 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 
 import logo from '../images/logo_dark.svg'
+import './global.css'
 
 require('typeface-russo-one')
 require('typeface-source-sans-pro')
-require('./global.css')
 
 const TemplateWrapper = ({ children, data }) => {
   return (
