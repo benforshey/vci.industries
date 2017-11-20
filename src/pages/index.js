@@ -172,6 +172,7 @@ const DarkSection = Section.extend`
     flex: 1 0 100%;
     letter-spacing: 1px;
     margin-top: .5em;
+    margin-right: 1em;
   }
 
   & > ul {
@@ -393,10 +394,12 @@ const IndexPage = ({ data }) => {
       <DarkSection>
         <h2>Our Credentials</h2>
         <div>
-          <h3>CA Contractor Licenses</h3>
+          <h3>CA Contractor Licenses (#1004077)</h3>
           <UL>
-            <li>C-8 Concrete #1004077</li>
-            <li>D-12 Synthetic Product #1004077</li>
+            <li>C-8 Concrete</li>
+            <li>C-61 Specialty Classification</li>
+            <li>D-12 Synthetic Product</li>
+            <li>D-63 Construction Clean Up</li>
           </UL>
         </div>
         <div>
