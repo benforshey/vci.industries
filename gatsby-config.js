@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `Concrete Services | VCI `,
@@ -17,8 +19,8 @@ module.exports = {
         hostingWPCOM: false,
         useACF: true,
         auth: {
-          htaccess_user: '',
-          htaccess_pass: '',
+          htaccess_user: process.env.WP_USER,
+          htaccess_pass: process.env.WP_PASSWORD,
           htaccess_sendImmediately: false,
           wpcom_app_clientSecret: '',
           wpcom_app_clientId: '',
