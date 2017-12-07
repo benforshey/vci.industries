@@ -387,7 +387,7 @@ const IndexPage = ({ data }) => {
         <Image sizes={data.pour.localFile.childImageSharp.sizes} alt={data.pour.alt_text} />
         <blockquote>
           The materials and services that VICTOR Concrete has provided are of high quality and their work is performed with attention to detail and accuracy. [We intend] to continue our collaboration and working relationship with VICTOR Concrete on future projects and cherish our mutually established partnership.
-          <cite>&mdash;Stephen Adams, President of Pacific Sundance Construction</cite>
+          <cite>&mdash;Stephen Adams, President<br />Pacific Sundance Construction</cite>
         </blockquote>
         <ScrollButton text='Contact Us' href='#form' />
       </BenefitsSection>
@@ -405,7 +405,7 @@ const IndexPage = ({ data }) => {
         <div>
           <h3>8(a) Exit Date</h3>
           <UL>
-            <li>27 August 2016</li>
+            <li>27 August 2026</li>
           </UL>
         </div>
         <div>
