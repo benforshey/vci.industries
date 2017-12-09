@@ -34,7 +34,7 @@ const StyledButton = styled.button`
 
 const Button = ({ text, ...rest }) => <StyledButton {...rest}>{text}</StyledButton>
 
-Button.PropTypes = {
+Button.propTypes = {
   text: PropTypes.string.isRequired
 }
 

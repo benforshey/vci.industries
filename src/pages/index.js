@@ -437,8 +437,8 @@ query IndexPage {
     alt_text
     localFile {
       childImageSharp {
-        sizes(maxWidth: 1920) {
-          ...GatsbyImageSharpSizes_noBase64
+        sizes(maxWidth: 1080) {
+          ...GatsbyImageSharpSizes_tracedSVG
         }
       }
     }
@@ -449,7 +449,7 @@ query IndexPage {
     localFile {
       childImageSharp {
         sizes(maxWidth: 600) {
-          ...GatsbyImageSharpSizes_withWebp_tracedSVG
+          ...GatsbyImageSharpSizes
         }
       }
     }
@@ -460,7 +460,7 @@ query IndexPage {
     localFile {
       childImageSharp {
         sizes(maxWidth: 600) {
-          ...GatsbyImageSharpSizes_withWebp_tracedSVG
+          ...GatsbyImageSharpSizes
         }
       }
     }
@@ -471,7 +471,7 @@ query IndexPage {
     localFile {
       childImageSharp {
         sizes(maxWidth: 600) {
-          ...GatsbyImageSharpSizes_withWebp_tracedSVG
+          ...GatsbyImageSharpSizes
         }
       }
     }
@@ -482,7 +482,7 @@ query IndexPage {
     localFile {
       childImageSharp {
         sizes(maxWidth: 600) {
-          ...GatsbyImageSharpSizes_withWebp_tracedSVG
+          ...GatsbyImageSharpSizes
         }
       }
     }

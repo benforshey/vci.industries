@@ -37,7 +37,7 @@ const StyledAnchorButton = styled(AnchorLink)`
 
 const ScrollButton = ({ href, text }) => <StyledAnchorButton href={href}>{text}</StyledAnchorButton>
 
-ScrollButton.PropTypes = {
+ScrollButton.propTypes = {
   href: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired
 }
