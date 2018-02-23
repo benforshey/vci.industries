@@ -1,18 +1,18 @@
 // /*eslint-env browser*/
-import React from 'react'
-import Button from '../components/button'
-import styled, { keyframes } from 'styled-components'
-import 'whatwg-fetch'
+import React from 'react';
+import Button from '../components/button';
+import styled, { keyframes } from 'styled-components';
+import 'whatwg-fetch';
 
 const Form = styled.form`
   padding: 1em 4vw;
   position: relative;
-`
+`;
 
 const FormGroup = styled.p`
   margin: 1em 0 2em;
   position: relative;
-`
+`;
 
 const Input = styled.input`
   background: none;
@@ -41,7 +41,7 @@ const Input = styled.input`
   &:valid + label {
     transform: translateY(-1.25em);
   }
-`
+`;
 const TextArea = styled.textarea`
   background: none;
   border-radius: 0;
@@ -71,7 +71,7 @@ const TextArea = styled.textarea`
   &:valid + label {
     transform: translateY(-1.25em);
   }
-`
+`;
 
 const Label = styled.label`
   font-weight: 700;
@@ -80,7 +80,7 @@ const Label = styled.label`
   top: 0;
   transition: transform .2s ease-out;
   user-select: none;
-`
+`;
 
 const Hint = styled.span`
   display: block;
@@ -88,7 +88,7 @@ const Hint = styled.span`
   font-style: italic;
   margin-top: .25em;
   user-selec: none;
-`
+`;
 
 const gracefulAppear = keyframes`
   from {
@@ -99,7 +99,7 @@ const gracefulAppear = keyframes`
     max-height: 100vh;
     opacity: 1;
   }
-`
+`;
 
 const Feedback = styled.p`
   animation: ${gracefulAppear} .4s ease-out;
@@ -111,116 +111,149 @@ const Feedback = styled.p`
   bottom: -4.5em;
   left: 4vw;
   padding: 1em;
-`
+`;
 
 class FormComponent extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
       name: '',
       contact: '',
       company: '',
       message: '',
-      feedback: ''
-    }
+      feedback: '',
+    };
 
-    this.handleChange = this.handleChange.bind(this)
-    this.determineContactType = this.determineContactType.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.determineContactType = this.determineContactType.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange (e) {
-    return this.setState({ [e.target.name]: e.target.value })
+  handleChange(e) {
+    return this.setState({ [e.target.name]: e.target.value });
   }
 
   // Quick and dirty autocomplete detection.
-  determineContactType (e) {
-    const attr = e.target.getAttribute('autocomplete')
+  determineContactType(e) {
+    console.log(this.autoComplete);
+    const attr = e.target.getAttribute('autocomplete');
 
     // If there's an ampersand, this is an email address. Return early.
     if (/@/.test(e.target.value)) {
       return attr === 'tel'
         ? e.target.setAttribute('autocomplete', 'email')
-        : null
+        : null;
     }
 
     // There are digits, so this might be a telephone number.
     if (/^(\+|\d|\()/.test(e.target.value)) {
       return attr === 'email'
         ? e.target.setAttribute('autocomplete', 'tel')
-        : null
+        : null;
     }
   }
 
-  handleSubmit (e) {
-    e.preventDefault()
-    e.stopPropagation()
+  handleSubmit(e) {
+    e.preventDefault();
+    e.stopPropagation();
 
-    this.setState({ feedback: 'Sending your message…' })
+    this.setState({ feedback: 'Sending your message…' });
 
     fetch('https://message.integrisweb.com/mail/', {
       method: 'post',
-      body: new FormData(e.target)
+      body: new FormData(e.target),
     })
-    .then(response => {
-      if (response.ok) {
+      .then((response) => {
+        if (response.ok) {
         // Message was sent successfully, so clear the form.
-        this.setState({
-          name: '',
-          contact: '',
-          company: '',
-          message: '',
-          feedback: 'Your message has been sent!'
-        })
-        // Message was sent successfully, so clear the success message.
-        return setTimeout(() => {
-          this.setState({ feedback: '' })
-        }, 10000)
-      }
-    })
-    .catch(err => {
-      console.error(err)
-
-      this.setState({
-        feedback: `Sorry, we could’t send your message. Please try again later or contact us using the information at the bottom of this page.`
+          this.setState({
+            name: '',
+            contact: '',
+            company: '',
+            message: '',
+            feedback: 'Your message has been sent!',
+          });
+          // Message was sent successfully, so clear the success message.
+          return setTimeout(() => {
+            this.setState({ feedback: '' });
+          }, 10000);
+        }
       })
-    })
+      .catch((err) => {
+        console.error(err);
+
+        this.setState({
+          feedback: 'Sorry, we could’t send your message. Please try again later or contact us using the information at the bottom of this page.',
+        });
+      });
   }
 
-  render () {
+  render() {
     return (
       <Form
-        id='form'
-        action='https://message.integrisweb.com/mail/'
-        method='post'
+        id="form"
+        action="https://message.integrisweb.com/mail/"
+        method="post"
         onSubmit={this.handleSubmit}
       >
         <FormGroup>
-          <Input id='name' name='name' type='text' autoComplete='name' value={this.state.name} onChange={this.handleChange} required />
-          <Label htmlFor='name'>Name</Label>
+          <Input
+            id="name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+            required
+          />
+          <Label htmlFor="name">Name</Label>
           <Hint>What is your full name?</Hint>
         </FormGroup>
         <FormGroup>
-          <Input id='contact' name='contact' type='text' autoComplete='email' onInput={this.determineContactType} value={this.state.contact} onChange={this.handleChange} required />
-          <Label htmlFor='contact'>Contact Information</Label>
+          <Input
+            id="contact"
+            name="contact"
+            type="text"
+            autoComplete="email"
+            onInput={this.determineContactType}
+            value={this.state.contact}
+            onChange={this.handleChange}
+            required
+          />
+          <Label htmlFor="contact">Contact Information</Label>
           <Hint>How can we reach you for reply?</Hint>
         </FormGroup>
         <FormGroup>
-          <Input id='company' name='company' type='text' autoComplete='organization' value={this.state.company} onChange={this.handleChange} required />
-          <Label htmlFor='company'>Company</Label>
+          <Input
+            id="company"
+            name="company"
+            type="text"
+            autoComplete="organization"
+            value={this.state.company}
+            onChange={this.handleChange}
+            required
+          />
+          <Label htmlFor="company">Company</Label>
           <Hint>What company do you represent?</Hint>
         </FormGroup>
         <FormGroup>
-          <TextArea id='message' name='message' spellCheck='true' value={this.state.message} onChange={this.handleChange} required />
-          <Label htmlFor='message'>Message</Label>
+          <TextArea
+            id="message"
+            name="message"
+            spellCheck="true"
+            value={this.state.message}
+            onChange={this.handleChange}
+            required
+          />
+          <Label htmlFor="message">Message</Label>
           <Hint>What can we do for you?</Hint>
         </FormGroup>
-        <Button type='submit' form='form' text='Send Message' />
+        <Button type="submit" form="form" text="Send Message" />
         {this.state.feedback ? <Feedback>{this.state.feedback}</Feedback> : null }
       </Form>
-    )
+    );
   }
 }
 
-export default FormComponent
+export default FormComponent;

@@ -4,25 +4,27 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "dotenv": "4.0.0",
-    "gatsby": "^1.9.128",
-    "gatsby-image": "1.0.27",
-    "gatsby-link": "1.6.30",
-    "gatsby-plugin-google-analytics": "1.0.13",
-    "gatsby-plugin-netlify": "1.0.9",
-    "gatsby-plugin-offline": "1.0.11",
-    "gatsby-plugin-react-helmet": "^2.0.2",
-    "gatsby-plugin-react-next": "1.0.5",
-    "gatsby-plugin-sharp": "1.6.22",
-    "gatsby-plugin-sitemap": "1.2.6",
-    "gatsby-plugin-styled-components": "2.0.3",
-    "gatsby-source-wordpress": "2.0.40",
-    "gatsby-transformer-sharp": "1.6.15",
+    "dotenv": "5.0.0",
+    "gatsby": "^1.9.210",
+    "gatsby-image": "1.0.39",
+    "gatsby-link": "1.6.37",
+    "gatsby-plugin-google-analytics": "1.0.19",
+    "gatsby-plugin-netlify": "1.0.18",
+    "gatsby-plugin-offline": "1.0.14",
+    "gatsby-plugin-react-helmet": "^2.0.5",
+    "gatsby-plugin-react-next": "1.0.9",
+    "gatsby-plugin-sharp": "1.6.33",
+    "gatsby-plugin-sitemap": "1.2.13",
+    "gatsby-plugin-styled-components": "2.0.8",
+    "gatsby-source-wordpress": "2.0.60",
+    "gatsby-transformer-sharp": "1.6.21",
+    "prop-types": "15.6.0",
+    "react": "16.2.0",
     "react-anchor-link-smooth-scroll": "1.0.5",
     "react-helmet": "5.2.0",
-    "styled-components": "2.2.4",
-    "typeface-russo-one": "0.0.44",
-    "typeface-source-sans-pro": "0.0.44"
+    "styled-components": "3.1.6",
+    "typeface-russo-one": "0.0.54",
+    "typeface-source-sans-pro": "0.0.54"
   },
   "keywords": [
     "gatsby"
@@ -36,6 +38,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.8.2"
+    "prettier": "^1.10.2"
   }
 }

@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import styled from 'styled-components';
 
 const StyledAnchorButton = styled(AnchorLink)`
   background: linear-gradient(hsl(50, 85%, 61%), hsl(48, 85%, 61%));
@@ -33,13 +33,14 @@ const StyledAnchorButton = styled(AnchorLink)`
     box-shadow: 0 1px 0 0 hsla(270, 2%, 25%, .3);
     background: linear-gradient(hsl(53, 85%, 61%), hsl(55, 85%, 61%));
   }
-`
+`;
 
-const ScrollButton = ({ href, text }) => <StyledAnchorButton href={href}>{text}</StyledAnchorButton>
+const ScrollButton = ({ href, text }) =>
+  <StyledAnchorButton href={href}>{text}</StyledAnchorButton>;
 
 ScrollButton.propTypes = {
   href: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired
-}
+  text: PropTypes.string.isRequired,
+};
 
-export default ScrollButton
+export default ScrollButton;

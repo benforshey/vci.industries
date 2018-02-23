@@ -1,14 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import ScrollButton from '../components/scrollButton'
-import FormComponent from '../components/form'
-import Image from 'gatsby-image'
+import React from 'react';
+import propTypes from 'prop-types';
+import styled from 'styled-components';
+import Image from 'gatsby-image';
+import ScrollButton from '../components/scrollButton';
+import FormComponent from '../components/form';
 
-import heroDecoratorTopRight from '../images/hero_top-right.svg'
-import heroDecoratorBottom from '../images/hero_bottom.svg'
-import bullet from '../images/bullet.png'
-import emailDecorator from '../images/email.svg'
-import contactDecorator from '../images/contact_left.svg'
+import heroDecoratorTopRight from '../images/hero_top-right.svg';
+import heroDecoratorBottom from '../images/hero_bottom.svg';
+import bullet from '../images/bullet.png';
+import emailDecorator from '../images/email.svg';
+import contactDecorator from '../images/contact_left.svg';
 
 const Hero = styled.div`
   align-items: center;
@@ -56,14 +57,14 @@ const Hero = styled.div`
   @media (min-width: 60em) {
     height: 40vw;
   }
-`
+`;
 
 const HeroTitle = styled.h1`
   color: #ffffff;
   font-size: calc(.75em + 2vw);
   letter-spacing: 1px;
   text-align: center;
-`
+`;
 
 const HeroImage = styled.div`
   height: 60vw;
@@ -89,7 +90,7 @@ const HeroImage = styled.div`
       top: -15vw;
     }
   }
-`
+`;
 
 const Section = styled.section`
   margin: 0 auto;
@@ -101,11 +102,11 @@ const Section = styled.section`
       max-width: none;
     }
   }
-`
+`;
 
 const GreySection = Section.extend`
   background: hsl(0, 0%, 97%);
-`
+`;
 
 const QualitySection = Section.extend`
 
@@ -156,7 +157,7 @@ const QualitySection = Section.extend`
     }
   }
 
-`
+`;
 
 const DarkSection = Section.extend`
   background: hsl(270, 2%, 42%);
@@ -186,7 +187,7 @@ const DarkSection = Section.extend`
     flex: 0 1 33%;
     margin: 0 .5em;
   }
-`
+`;
 
 const BenefitsSection = GreySection.extend`
   & blockquote {
@@ -250,7 +251,7 @@ const BenefitsSection = GreySection.extend`
       margin-top: 0;
     }
   }
-`
+`;
 
 const ContactSection = GreySection.extend`
   background-image: url(${contactDecorator});
@@ -297,12 +298,12 @@ const ContactSection = GreySection.extend`
       grid-row: 2;
     }
   }
-`
+`;
 
 const UL = styled.ul`
   list-style-image: url(${bullet});
   margin-left: 1.5em;
-`
+`;
 const ClientList = styled.ul`
   color: #ffffff;
   display: flex;
@@ -317,37 +318,42 @@ const ClientList = styled.ul`
     margin: 0 0 1em 1em;
     padding: .125em .5em;
   }
-`
+`;
 
-function renderClientList (data) {
-  const listItems = data.map(node => {
-    const acf = node.node.acf
-    const key = node.node.wordpress_id
+function renderClientList(data) {
+  const listItems = data.map((node) => {
+    const { acf } = node.node;
+    const key = node.node.wordpress_id;
 
-    return acf.recent_project ? <li key={key}>{acf.client_name}, {acf.recent_project}</li> : <li key={key}>{acf.client_name}</li>
-  })
+    return acf.recent_project
+      ? <li key={key}>{acf.client_name}, {acf.recent_project}</li>
+      : <li key={key}>{acf.client_name}</li>;
+  });
 
   return (
     <ClientList>
       {listItems}
     </ClientList>
-  )
+  );
 }
 
 const IndexPage = ({ data }) => {
-  const date = `${new Date().getFullYear() - 1989} Years` || `Decades`
-  const clientList = renderClientList(data.allWordpressWpClient.edges)
+  const date = `${new Date().getFullYear() - 1989} Years` || 'Decades';
+  const clientList = renderClientList(data.allWordpressWpClient.edges);
 
   return (
     <main>
       <Hero>
         <HeroTitle>{date} of Concrete Services. 8(a)&#8209;certified.</HeroTitle>
-        <ScrollButton text='See Why 8(a) Matters' href='#benefits' />
+        <ScrollButton text="See Why 8(a) Matters" href="#benefits" />
         <HeroImage>
-          <Image sizes={data.heroImage.localFile.childImageSharp.sizes} alt={data.heroImage.alt_text} />
+          <Image
+            sizes={data.heroImage.localFile.childImageSharp.sizes}
+            alt={data.heroImage.alt_text}
+          />
         </HeroImage>
       </Hero>
-      <QualitySection id='quality'>
+      <QualitySection id="quality">
         <h2>Quality that Stands the Test of Time</h2>
         <p>Founded in 1989, VICTOR Concrete, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in concrete paving and other specialty concrete services for federal, state, and public works agencies and industrial and commercial clients in California. VCI provides quality workmanship at a fair price while protecting the health and safety of its employees and the surrounding community.</p>
         <Image sizes={data.tiltUp.localFile.childImageSharp.sizes} alt={data.tiltUp.alt_text} />
@@ -363,7 +369,7 @@ const IndexPage = ({ data }) => {
           <li>Timely use of curing compounds and sealers</li>
         </UL>
         <Image sizes={data.spread.localFile.childImageSharp.sizes} alt={data.spread.alt_text} />
-        <ScrollButton text='Contact Us' href='#form' />
+        <ScrollButton text="Contact Us" href="#form" />
       </QualitySection>
       <DarkSection>
         <h2>Our Expertise</h2>
@@ -381,7 +387,7 @@ const IndexPage = ({ data }) => {
           <li>Horizontal Construction</li>
         </UL>
       </DarkSection>
-      <BenefitsSection id='benefits'>
+      <BenefitsSection id="benefits">
         <h2>8(a) Benefits</h2>
         <p>VICTOR Concrete, Inc. (VCI) is a small, minority-owned, 8(a)-certified business. Federal agencies can contract with VCI directly using sole-source acquisition, with a $4M ceiling. 8(a) organizations can now bid in partnership with other organizations, greatly streamlining the process by which 8(a) contracts are awarded.</p>
         <Image sizes={data.pour.localFile.childImageSharp.sizes} alt={data.pour.alt_text} />
@@ -389,7 +395,7 @@ const IndexPage = ({ data }) => {
           The materials and services that VICTOR Concrete has provided are of high quality and their work is performed with attention to detail and accuracy. [We intend] to continue our collaboration and working relationship with VICTOR Concrete on future projects and cherish our mutually established partnership.
           <cite>&mdash;Stephen Adams, President<br />Pacific Sundance Construction</cite>
         </blockquote>
-        <ScrollButton text='Contact Us' href='#form' />
+        <ScrollButton text="Contact Us" href="#form" />
       </BenefitsSection>
       <DarkSection>
         <h2>Our Credentials</h2>
@@ -416,7 +422,7 @@ const IndexPage = ({ data }) => {
           </UL>
         </div>
       </DarkSection>
-      <Section id='clients'>
+      <Section id="clients">
         <h2>Join Our Recent Clients</h2>
         {clientList}
       </Section>
@@ -426,10 +432,16 @@ const IndexPage = ({ data }) => {
         <FormComponent />
       </ContactSection>
     </main>
-  )
-}
+  );
+};
 
-export default IndexPage
+IndexPage.propTypes = {
+  data: propTypes.shape({
+    allWordpressWpClient: propTypes.object.isRequired,
+  }).isRequired,
+};
+
+export default IndexPage;
 
 export const query = graphql`
 query IndexPage {
@@ -501,4 +513,4 @@ query IndexPage {
   }
 
 }
-`
+`;

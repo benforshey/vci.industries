@@ -1,8 +1,8 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import styled from 'styled-components'
-import logo from '../images/logo_dark.svg'
+import React from 'react';
+import Link from 'gatsby-link';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import styled from 'styled-components';
+import logo from '../images/logo_dark.svg';
 
 const Header = styled.header`
   align-items: center;
@@ -16,11 +16,11 @@ const Header = styled.header`
     flex-direction: row;
     justify-content: space-between;
   }
-`
+`;
 
 const Image = styled.img`
   width: 10em;
-`
+`;
 const Nav = styled.nav`
   margin-top: 2vw;
   text-transform: uppercase;
@@ -34,17 +34,17 @@ const Nav = styled.nav`
   @media (min-width: 62.5em) {
     flex: 0 1 40%;
   }
-`
+`;
 const Ul = styled.ul`
   display: flex;
   justify-content: space-between;
-`
+`;
 const StyledLink = styled(Link)`
 
   &:focus {
     outline: 2px solid hsl(183, 73%, 32%);
   }
-`
+`;
 
 const StyledAnchorLink = styled(AnchorLink)`
   box-shadow: 0 2px 0 0 #414042;
@@ -56,20 +56,20 @@ const StyledAnchorLink = styled(AnchorLink)`
   &:focus {
     outline: 2px solid hsl(183, 73%, 32%);
   }
-`
+`;
 
 const HeaderComponent = () => (
-  <Header role='banner'>
-    <StyledLink to='/'><Image src={logo} alt='Victor Concrete, Inc. (VCI)' /></StyledLink>
-    <Nav role='navigation'>
+  <Header role="banner">
+    <StyledLink to="/"><Image src={logo} alt="Victor Concrete, Inc. (VCI)" /></StyledLink>
+    <Nav role="navigation">
       <Ul>
-        <li><StyledAnchorLink href='#quality'>QUALITY</StyledAnchorLink></li>
-        <li><StyledAnchorLink href='#benefits'>BENEFITS</StyledAnchorLink></li>
-        <li><StyledAnchorLink href='#clients'>CLIENTS</StyledAnchorLink></li>
-        <li><StyledAnchorLink href='#form'>CONTACT</StyledAnchorLink></li>
+        <li><StyledAnchorLink href="#quality">QUALITY</StyledAnchorLink></li>
+        <li><StyledAnchorLink href="#benefits">BENEFITS</StyledAnchorLink></li>
+        <li><StyledAnchorLink href="#clients">CLIENTS</StyledAnchorLink></li>
+        <li><StyledAnchorLink href="#form">CONTACT</StyledAnchorLink></li>
       </Ul>
     </Nav>
   </Header>
-)
+);
 
-export default HeaderComponent
+export default HeaderComponent;
