@@ -22,17 +22,19 @@ const Image = styled.img`
   width: 10em;
 `;
 const Nav = styled.nav`
+  font-size: .875em;
   margin-top: 2vw;
   text-transform: uppercase;
   width: 100%;
 
   @media (min-width: 43.75em) {
-    flex: 0 1 50%;
+    flex: 0 1 65%;
+    font-size: 1em;
     margin-top: 0;
   }
 
   @media (min-width: 62.5em) {
-    flex: 0 1 40%;
+    flex: 0 1 55%;
   }
 `;
 const Ul = styled.ul`
@@ -65,6 +67,7 @@ const HeaderComponent = () => (
       <Ul>
         <li><StyledAnchorLink href="#quality">QUALITY</StyledAnchorLink></li>
         <li><StyledAnchorLink href="#benefits">BENEFITS</StyledAnchorLink></li>
+        <li><StyledAnchorLink href="#credentials">CREDENTIALS</StyledAnchorLink></li>
         <li><StyledAnchorLink href="#clients">CLIENTS</StyledAnchorLink></li>
         <li><StyledAnchorLink href="#form">CONTACT</StyledAnchorLink></li>
       </Ul>

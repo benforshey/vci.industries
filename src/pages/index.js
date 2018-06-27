@@ -166,6 +166,14 @@ const DarkSection = Section.extend`
   flex-wrap: wrap;
   justify-content: space-between;
 
+  & a {
+    color: hsl(0, 0%, 100%);
+  }
+
+  & a:focus {
+    outline: 2px solid hsl(183, 73%, 32%);
+  }
+
   & h2,
   h3,
   h4 {
@@ -344,7 +352,7 @@ const IndexPage = ({ data }) => {
   return (
     <main>
       <Hero>
-        <HeroTitle>{date} of Concrete Services. 8(a)&#8209;certified.</HeroTitle>
+        <HeroTitle>{date} of Construction and Concrete Services. 8(a)&#8209;certified.</HeroTitle>
         <ScrollButton text="See Why 8(a) Matters" href="#benefits" />
         <HeroImage>
           <Image
@@ -355,9 +363,9 @@ const IndexPage = ({ data }) => {
       </Hero>
       <QualitySection id="quality">
         <h2>Quality that Stands the Test of Time</h2>
-        <p>Founded in 1989, VICTOR Concrete, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in concrete paving and other specialty concrete services for federal, state, and public works agencies and industrial and commercial clients in California. VCI provides quality workmanship at a fair price while protecting the health and safety of its employees and the surrounding community.</p>
+        <p>Founded in 1989, VICTOR Construction, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in construction, concrete paving, and other specialty concrete services for federal, state, and public works agencies and industrial and commercial clients in California. VCI provides quality workmanship at a fair price while protecting the health and safety of its employees and the surrounding community.</p>
         <Image sizes={data.tiltUp.localFile.childImageSharp.sizes} alt={data.tiltUp.alt_text} />
-        <p>VCI&rsquo;s team of concrete specialists adhere to ACI (American Concrete Institute), PCA (Portland Cement Association), and ASTM (American Society of Testing Materials) guidelines for properly placing concrete. VCI ensures:</p>
+        <p>VCI&rsquo;s team of construction and concrete specialists adhere to ACI (American Concrete Institute), PCA (Portland Cement Association), and ASTM (American Society of Testing Materials) guidelines for properly placing concrete. VCI ensures:</p>
         <UL>
           <li>Proper preparation of the sub-base</li>
           <li>Accurate forming, layout, and proper elevations for water run-off</li>
@@ -389,7 +397,7 @@ const IndexPage = ({ data }) => {
       </DarkSection>
       <BenefitsSection id="benefits">
         <h2>8(a) Benefits</h2>
-        <p>VICTOR Concrete, Inc. (VCI) is a small, minority-owned, 8(a)-certified business. Federal agencies can contract with VCI directly using sole-source acquisition, with a $4M ceiling. 8(a) organizations can now bid in partnership with other organizations, greatly streamlining the process by which 8(a) contracts are awarded.</p>
+        <p>VICTOR Construction, Inc. (VCI) is a small, minority-owned, 8(a)-certified business. Federal agencies can contract with VCI directly using sole-source acquisition, with a $4M ceiling. 8(a) organizations can now bid in partnership with other organizations, greatly streamlining the process by which 8(a) contracts are awarded.</p>
         <Image sizes={data.pour.localFile.childImageSharp.sizes} alt={data.pour.alt_text} />
         <blockquote>
           The materials and services that VICTOR Concrete has provided are of high quality and their work is performed with attention to detail and accuracy. [We intend] to continue our collaboration and working relationship with VICTOR Concrete on future projects and cherish our mutually established partnership.
@@ -397,7 +405,7 @@ const IndexPage = ({ data }) => {
         </blockquote>
         <ScrollButton text="Contact Us" href="#form" />
       </BenefitsSection>
-      <DarkSection>
+      <DarkSection id="credentials">
         <h2>Our Credentials</h2>
         <div>
           <h3>CA Contractor Licenses (#1004077)</h3>
@@ -417,8 +425,27 @@ const IndexPage = ({ data }) => {
         <div>
           <h3>Bonding</h3>
           <UL>
-            <li>$5M Aggregate</li>
-            <li>$2.4M per Project</li>
+            <li>$6M Aggregate</li>
+            <li>$3M per Project</li>
+          </UL>
+        </div>
+        <div>
+          <h3>NAICS Codes</h3>
+          <UL>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${237310}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">237310</a>  Highway, Street, and Bridge Construction</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238110}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238110</a> PPoured Concrete Foundation and Structure Contractors</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236118}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236118</a> Residential Remodelers</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236210}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236210</a> Industrial Building Construction</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236220}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236220</a> Commercial and Institutional Building Construction</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${237990}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">237990</a> Other Heavy and Civil Engineering Construction</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238120}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238120</a> Structural Steel and Precast Concrete Contractors</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238140}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238140</a> Masonry Contractor</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238190}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238190</a> Other Foundation, Structure, and Building Exterior Contractors</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238390}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238390</a> Other Building Finishing Contractors</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238910}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238910</a> Site Preparation Contractors</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238990}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238990</a> All Other Specialty Trade Contractors</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${561730}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">561730</a> Landscaping Services</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${562111}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">562111</a> Solid Waste Collection</li>
           </UL>
         </div>
       </DarkSection>
