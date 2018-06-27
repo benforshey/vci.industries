@@ -433,7 +433,7 @@ const IndexPage = ({ data }) => {
           <h3>NAICS Codes</h3>
           <UL>
             <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${237310}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">237310</a>  Highway, Street, and Bridge Construction</li>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238110}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238110</a> PPoured Concrete Foundation and Structure Contractors</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238110}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238110</a> Poured Concrete Foundation and Structure Contractors</li>
             <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236118}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236118</a> Residential Remodelers</li>
             <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236210}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236210</a> Industrial Building Construction</li>
             <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236220}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236220</a> Commercial and Institutional Building Construction</li>
