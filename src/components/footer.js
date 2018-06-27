@@ -71,6 +71,7 @@ const FooterComponent = () => (
       <UL>
         <li><StyledAnchorLink href="#quality">QUALITY</StyledAnchorLink></li>
         <li><StyledAnchorLink href="#benefits">BENEFITS</StyledAnchorLink></li>
+        <li><StyledAnchorLink href="#credentials">CREDENTIALS</StyledAnchorLink></li>
         <li><StyledAnchorLink href="#clients">CLIENTS</StyledAnchorLink></li>
         <li><StyledAnchorLink href="#form">CONTACT</StyledAnchorLink></li>
       </UL>
@@ -90,7 +91,7 @@ const FooterComponent = () => (
       <a href="/documents/VCI_Capability_Statement.pdf" download>Capability Statement</a>
     </div>
     <CenteredCopyright>
-      &copy; 1989&ndash;{new Date().getFullYear()} Victor Concrete, Inc. (VCI). All rights reserved.
+      &copy; 1989&ndash;{new Date().getFullYear()} Victor Construction, Inc. (VCI). All rights reserved.
     </CenteredCopyright>
   </Footer>
 );

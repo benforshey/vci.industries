@@ -432,20 +432,20 @@ const IndexPage = ({ data }) => {
         <div>
           <h3>NAICS Codes</h3>
           <UL>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${237310}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">237310</a> Construction of highways, streets, roads, airports, runways, public sidewalks, bridges</li>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238110}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238110</a> Poured concrete foundations and structures contractors</li>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236118}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236118</a> Remodeling Construction</li>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236210}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236210</a> Construction of new work addition, alterations, maintenance repairs industrial buildings</li>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236220}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236220</a> Construction including new work additions, alterations, maintenance and repairs of commercial and institutional buildings and related structures</li>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${237990}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">237990</a> Heavy and Civil Engineering</li>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238120}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238120</a> Structural steel and precast concrete contractors</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${237310}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">237310</a>  Highway, Street, and Bridge Construction</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238110}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238110</a> PPoured Concrete Foundation and Structure Contractors</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236118}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236118</a> Residential Remodelers</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236210}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236210</a> Industrial Building Construction</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${236220}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">236220</a> Commercial and Institutional Building Construction</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${237990}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">237990</a> Other Heavy and Civil Engineering Construction</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238120}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238120</a> Structural Steel and Precast Concrete Contractors</li>
             <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238140}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238140</a> Masonry Contractor</li>
             <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238190}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238190</a> Other Foundation, Structure, and Building Exterior Contractors</li>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238390}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238390</a> Other Building Finishing Contractor</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238390}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238390</a> Other Building Finishing Contractors</li>
             <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238910}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238910</a> Site Preparation Contractors</li>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238990}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238990</a> Artificial Turf Installation</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${238990}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">238990</a> All Other Specialty Trade Contractors</li>
             <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${561730}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">561730</a> Landscaping Services</li>
-            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${562111}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">562111</a> Solid waste collection collecting and hauling nonhazardous solid waste</li>
+            <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${562111}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">562111</a> Solid Waste Collection</li>
           </UL>
         </div>
       </DarkSection>
