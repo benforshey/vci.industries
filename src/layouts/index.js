@@ -30,14 +30,14 @@ const TemplateWrapper = ({ children, data }) => (
       <meta property="og:image" content="/og-image.jpg" />
       <meta property="og:image:width" content="279" />
       <meta property="og:image:height" content="279" />
-      <meta property="og:description" content="Founded in 1989, VICTOR Concrete, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in concrete paving and other specialty concrete services for federal, state, and a wide range of commercial clients in California." />
+      <meta property="og:description" content="Founded in 1989, VICTOR Construction, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in construction, concrete paving, and other specialty concrete services for federal, state, and public works agencies and industrial and commercial clients in California." />
       <meta property="og:title" content="Victor Concrete, Inc. (VCI)" />
       <meta property="og:url" content="https://www.vci.industries/" />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="https://www.vci.industries/" />
       <meta name="twitter:title" content="Victor Concrete, Inc. (VCI)" />
-      <meta name="twitter:description" content="Founded in 1989, VICTOR Concrete, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in concrete paving and other specialty concrete services for federal, state, and a wide range of commercial clients in California." />
+      <meta name="twitter:description" content="Founded in 1989, VICTOR Construction, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in construction, concrete paving, and other specialty concrete services for federal, state, and public works agencies and industrial and commercial clients in California." />
       <meta name="twitter:image" content="/og-image.jpg" />
 
       <script type="application/ld+json">

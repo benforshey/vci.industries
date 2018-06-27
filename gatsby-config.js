@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Construction Services | VCI ',
-    description: 'VCI specializes in concrete paving and other specialty concrete services for federal, state, and a wide range of commercial clients in California.',
+    description: 'Founded in 1989, VICTOR Construction, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in construction, concrete paving, and other specialty concrete services for federal, state, and public works agencies and industrial and commercial clients in California.',
     siteUrl: 'https://www.vci.industries',
   },
   plugins: [
