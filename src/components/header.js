@@ -1,8 +1,7 @@
-import React from 'react';
-import Link from 'gatsby-link';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import styled from 'styled-components';
-import logo from '../images/logo_dark.svg';
+import React from 'react'
+import Link from 'gatsby-link'
+import styled from 'styled-components'
+import logo from '../images/logo_dark.svg'
 
 const Header = styled.header`
   align-items: center;
@@ -16,11 +15,11 @@ const Header = styled.header`
     flex-direction: row;
     justify-content: space-between;
   }
-`;
+`
 
 const Image = styled.img`
   width: 10em;
-`;
+`
 const Nav = styled.nav`
   font-size: .875em;
   margin-top: 2vw;
@@ -36,19 +35,12 @@ const Nav = styled.nav`
   @media (min-width: 62.5em) {
     flex: 0 1 55%;
   }
-`;
+`
 const Ul = styled.ul`
   display: flex;
   justify-content: space-between;
-`;
+`
 const StyledLink = styled(Link)`
-
-  &:focus {
-    outline: 2px solid hsl(183, 73%, 32%);
-  }
-`;
-
-const StyledAnchorLink = styled(AnchorLink)`
   box-shadow: 0 2px 0 0 #414042;
   color: #414042;
   font-size: .875em;
@@ -58,21 +50,21 @@ const StyledAnchorLink = styled(AnchorLink)`
   &:focus {
     outline: 2px solid hsl(183, 73%, 32%);
   }
-`;
+`
 
 const HeaderComponent = () => (
   <Header role="banner">
-    <StyledLink to="/"><Image src={logo} alt="Victor Concrete, Inc. (VCI)" /></StyledLink>
+    <Link to="/"><Image src={logo} alt="Victor Concrete, Inc. (VCI)" /></Link>
     <Nav role="navigation">
       <Ul>
-        <li><StyledAnchorLink href="#quality">QUALITY</StyledAnchorLink></li>
-        <li><StyledAnchorLink href="#benefits">BENEFITS</StyledAnchorLink></li>
-        <li><StyledAnchorLink href="#credentials">CREDENTIALS</StyledAnchorLink></li>
-        <li><StyledAnchorLink href="#clients">CLIENTS</StyledAnchorLink></li>
-        <li><StyledAnchorLink href="#form">CONTACT</StyledAnchorLink></li>
+        <li><StyledLink to="/">HOME</StyledLink></li>
+        <li><StyledLink to="/about/">ABOUT</StyledLink></li>
+        <li><StyledLink to="/benefits/">BENEFITS</StyledLink></li>
+        <li><StyledLink to="/work/">WORK</StyledLink></li>
+        <li><StyledLink to="/contact/">CONTACT</StyledLink></li>
       </Ul>
     </Nav>
   </Header>
-);
+)
 
-export default HeaderComponent;
+export default HeaderComponent
