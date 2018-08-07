@@ -142,11 +142,6 @@ const WorkPage = ({ data }) => {
             <li><a href={`https://www.census.gov/cgi-bin/sssd/naics/naicsrch?input=${562111}&search=2017+NAICS+Search&search=2017`} target="_blank" rel="noopener noreferrer">562111</a> Solid Waste Collection</li>
           </UL>
         </div>
-
-        <Button
-          text="Contact Us"
-          onClick={() => push('/contact/')}
-        />
       </DarkSection>
       <Section id="clients">
         <h2>Join Our Recent Clients</h2>
