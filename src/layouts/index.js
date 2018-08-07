@@ -1,14 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import React from 'react'
+import propTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import Header from '../components/header'
+import Footer from '../components/footer'
 
-import logo from '../images/logo_dark.svg';
-import './global.css';
-
-require('typeface-russo-one');
-require('typeface-source-sans-pro');
+import logo from '../images/logo_dark.svg'
+import './global.css'
 
 const TemplateWrapper = ({ children, data }) => (
   <div>
@@ -23,6 +20,8 @@ const TemplateWrapper = ({ children, data }) => (
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/manifest.json" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3cb149" />
+      <link href="https://fonts.googleapis.com/css?family=Russo+One|Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet" />
+
       <meta name="apple-mobile-web-app-title" content="VCI" />
       <meta name="application-name" content="VCI" />
       <meta name="theme-color" content="#3cb149" />
@@ -54,16 +53,16 @@ const TemplateWrapper = ({ children, data }) => (
     {children()}
     <Footer />
   </div>
-);
+)
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func.isRequired,
-  data: PropTypes.shape({
-    site: PropTypes.object.isRequired,
-  }).isRequired,
-};
+  children: propTypes.func.isRequired,
+  data: propTypes.shape({
+    site: propTypes.object.isRequired
+  }).isRequired
+}
 
-export default TemplateWrapper;
+export default TemplateWrapper
 
 export const query = graphql`
 query LayoutQuery {
@@ -74,4 +73,4 @@ query LayoutQuery {
     }
   }
 }
-`;
+`

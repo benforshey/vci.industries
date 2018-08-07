@@ -45,7 +45,7 @@ border-spacing: 0;
 
 *, *:before, *:after {
     box-sizing: inherit;
-  }
+}
 
 html {
     font-size: calc(.75rem + 1vw);
@@ -96,18 +96,18 @@ p {
 
 @media screen and (min-width: 25em) {
     body {
-      line-height: 1.30;
+        line-height: 1.30;
     }
 }
 
 @media screen and (min-width: 37.5em) {
     body {
-      line-height: 1.35;
+        line-height: 1.35;
     }
 }
 
 @media screen and (min-width: 50em) {
     body {
-      line-height: 1.4;
+        line-height: 1.4;
     }
 }
