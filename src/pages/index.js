@@ -17,7 +17,7 @@ const Hero = styled.div`
   height: 60vw;
   justify-content: flex-end;
   margin-bottom: 8vw;
-  padding: 1em 4vw calc(1em + 4vw);
+  padding: 1em 4vw calc(2em + 4vw);
   position: relative;
   width: 100vw;
 
@@ -62,6 +62,7 @@ const HeroTitle = styled.h1`
   font-size: calc(.75em + 2vw);
   letter-spacing: 1px;
   text-align: center;
+  margin-bottom: 3vw;
 `
 
 const HeroImage = styled.div`
@@ -93,7 +94,7 @@ const HeroImage = styled.div`
 const Section = styled.section`
   margin: 0 auto;
   max-width: 37.5em;
-  padding: 1em 4vw;
+  padding: 1em 6vw;
 
   @supports (display: grid) {
     @media (min-width: 50em) {
@@ -183,15 +184,21 @@ const DarkSection = Section.extend`
   }
 
   & > ul {
-    align-items: baseline;
+    align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
   & > ul > li {
+    flex: 0 1 50%;
+    padding: 0 1.5em 0 0;
+  }
+
+  @media (min-width: 40em) {
+    & > ul > li {
     flex: 0 1 33%;
-    margin: 0 .5em;
+  }
   }
 `
 

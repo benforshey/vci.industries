@@ -4,6 +4,9 @@ import Helmet from 'react-helmet'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
+import 'typeface-russo-one'
+import 'typeface-source-sans-pro'
+
 import logo from '../images/logo_dark.svg'
 import './global.css'
 
@@ -20,7 +23,6 @@ const TemplateWrapper = ({ children, data }) => (
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/manifest.json" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3cb149" />
-      <link href="https://fonts.googleapis.com/css?family=Russo+One|Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet" />
 
       <meta name="apple-mobile-web-app-title" content="VCI" />
       <meta name="application-name" content="VCI" />

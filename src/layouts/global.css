@@ -48,7 +48,7 @@ border-spacing: 0;
 }
 
 html {
-    font-size: calc(.75rem + 1vw);
+    font-size: calc(.75rem + .75vw);
 }
 
 body {

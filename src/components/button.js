@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const StyledButton = styled.button`
 
+  align-self: center;
   background: ${props => (props.form ? 'linear-gradient(hsl(183, 73%, 32%), hsl(180, 73%, 32%))' : 'linear-gradient(hsl(50, 85%, 61%), hsl(48, 85%, 61%))')};
   border-radius: 2px;
   border: none;
