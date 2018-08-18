@@ -1,23 +1,23 @@
-import React from 'react';
-import propTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import styled from 'styled-components';
-import Button from '../components/button';
+import React from 'react'
+import propTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import Button from '../components/button'
 
 const Main = styled.main`
   padding: 1em 4vw;
   max-width: 40em;
   margin: 0 auto;
-`;
+`
 
 const Form = styled.form`
   padding: 1em 4vw;
-`;
+`
 
 const FormGroup = styled.p`
   margin: 1em 0 2em;
   position: relative;
-`;
+`
 
 const Input = styled.input`
   background: none;
@@ -42,7 +42,7 @@ const Input = styled.input`
   &:valid + label {
     transform: translateY(-1.25em);
   }
-`;
+`
 
 const Label = styled.label`
   font-weight: 700;
@@ -51,7 +51,7 @@ const Label = styled.label`
   top: 0;
   transition: transform .2s ease-out;
   user-select: none;
-`;
+`
 
 const Hint = styled.span`
   display: block;
@@ -59,23 +59,23 @@ const Hint = styled.span`
   font-style: italic;
   margin-top: .25em;
   user-selec: none;
-`;
+`
 
 const NotFoundPage = ({ data }) => {
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit (e) {
+    e.preventDefault()
 
-    const form = e.target;
-    const search = form.querySelector('#search');
+    const form = e.target
+    const search = form.querySelector('#search')
 
-    search.value = `site:${data.site.siteMetadata.siteUrl} ${search.value}`;
-    return form.submit();
+    search.value = `site:${data.site.siteMetadata.siteUrl} ${search.value}`
+    return form.submit()
   }
 
   return (
     <Main>
       <Helmet>
-        <title>404 | VCI</title>
+        <title>Not Found | VCI</title>
         <meta name="description" content="Page not found. Let&rsquo;s find it." />
       </Helmet>
       <h1>Page Not Found</h1>
@@ -96,16 +96,16 @@ const NotFoundPage = ({ data }) => {
         <Button type="submit" form="form" text="Find It!" />
       </Form>
     </Main>
-  );
-};
+  )
+}
 
 NotFoundPage.propTypes = {
   data: propTypes.shape({
-    site: propTypes.object.isRequired,
-  }).isRequired,
-};
+    site: propTypes.object.isRequired
+  }).isRequired
+}
 
-export default NotFoundPage;
+export default NotFoundPage
 
 export const query = graphql`
 query BaseURLQuery {
@@ -115,4 +115,4 @@ query BaseURLQuery {
     }
   }
 }
-`;
+`

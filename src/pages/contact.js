@@ -2,6 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
+import Helmet from 'react-helmet'
 
 import FormComponent from '../components/form'
 import emailDecorator from '../images/email.svg'
@@ -14,7 +15,7 @@ const Section = styled.section`
 
   @supports (display: grid) {
     @media (min-width: 50em) {
-      max-width: none;
+      max-width: 80em;
     }
   }
 `
@@ -72,11 +73,20 @@ const ContactSection = GreySection.extend`
 
 const ContactPage = ({ data }) => {
   return (
-    <ContactSection>
-      <h2>Contact Us</h2>
-      <Image sizes={data.contact.localFile.childImageSharp.sizes} alt={data.contact.alt_text} />
-      <FormComponent />
-    </ContactSection>
+    <main>
+      <Helmet>
+        <title>Contact | VCI</title>
+        <script type="application/ld+json">
+          {'{"@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 2, "item": { "@id": "https://www.vci.industries/contact/", "name": "Contact" } }] }'}
+        </script>
+      </Helmet>
+
+      <ContactSection>
+        <h2>Contact Us</h2>
+        <Image sizes={data.contact.localFile.childImageSharp.sizes} alt={data.contact.alt_text} />
+        <FormComponent />
+      </ContactSection>
+    </main>
   )
 }
 

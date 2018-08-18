@@ -19,7 +19,7 @@ const Hero = styled.div`
   margin-bottom: 8vw;
   padding: 1em 4vw calc(2em + 4vw);
   position: relative;
-  width: 100vw;
+  width: 100%;
 
   &::before {
     background-image: url(${heroDecoratorTopRight});
@@ -71,7 +71,7 @@ const HeroImage = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   z-index: -1;
 
   & .gatsby-image-outer-wrapper {
@@ -98,7 +98,7 @@ const Section = styled.section`
 
   @supports (display: grid) {
     @media (min-width: 50em) {
-      max-width: none;
+      max-width: 80em;
     }
   }
 `

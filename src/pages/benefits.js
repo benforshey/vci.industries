@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
 import { push } from 'gatsby-link'
+import Helmet from 'react-helmet'
 
 import Button from '../components/button'
 
@@ -13,7 +14,7 @@ const Section = styled.section`
 
   @supports (display: grid) {
     @media (min-width: 50em) {
-      max-width: none;
+      max-width: 80em;
     }
   }
 `
@@ -93,6 +94,12 @@ const BenefitsSection = GreySection.extend`
 const BenefitsPage = ({ data }) => {
   return (
     <main>
+      <Helmet>
+        <title>Benefits | VCI</title>
+        <script type="application/ld+json">
+          {'{"@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 2, "item": { "@id": "https://www.vci.industries/benefits/", "name": "Benefits" } }] }'}
+        </script>
+      </Helmet>
       <BenefitsSection id="benefits">
         <h2>8(a) Benefits</h2>
         <p>VICTOR Construction, Inc. (VCI) is a small, minority-owned, 8(a)-certified business. Federal agencies can contract with VCI directly using sole-source acquisition, with a $4M ceiling. 8(a) organizations can now bid in partnership with other organizations, greatly streamlining the process by which 8(a) contracts are awarded.</p>

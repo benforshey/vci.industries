@@ -2,6 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { push } from 'gatsby-link'
+import Helmet from 'react-helmet'
 
 import Button from '../components/button'
 import bullet from '../images/bullet.png'
@@ -13,7 +14,7 @@ const Section = styled.section`
 
   @supports (display: grid) {
     @media (min-width: 50em) {
-      max-width: none;
+      max-width: 80em;
     }
   }
 `
@@ -99,6 +100,12 @@ const WorkPage = ({ data }) => {
 
   return (
     <main>
+      <Helmet>
+        <title>Work | VCI</title>
+        <script type="application/ld+json">
+          {'{"@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 2, "item": { "@id": "https://www.vci.industries/work/", "name": "Work" } }] }'}
+        </script>
+      </Helmet>
       <DarkSection id="credentials">
         <h2>Our Credentials</h2>
         <div>

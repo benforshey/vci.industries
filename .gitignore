@@ -9,3 +9,8 @@ yarn-error.log
 
 # environment variables
 .env
+
+# editor files
+.idea
+.vscode
+.vs
