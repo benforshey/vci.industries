@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import React from 'react'
+import styled from 'styled-components'
+import Link from 'gatsby-link'
 
-import logo from '../images/logo_light.svg';
+import logo from '../images/logo_light.svg'
 
 const Footer = styled.footer`
   color: hsl(0, 0%, 100%);
@@ -27,33 +27,33 @@ const Footer = styled.footer`
     margin-top: 0;
   }
 
-`;
+`
 
 const CenteredLogo = styled.div`
   display: flex;
   justify-content: center;
   flex: 1 0 100%;
   margin: 2em auto;
-`;
+`
 
 const CenteredCopyright = styled.p`
   flex: 1 0 100%;
   font-style: italic;
   margin-top: 2em;
   text-align: center;
-`;
+`
 
 const Image = styled.img`
   width: 10em;
-`;
+`
 
 const UL = styled.ul`
   & li {
     margin: .5em 0;
   }
-`;
+`
 
-const StyledAnchorLink = styled(AnchorLink)`
+const FooterLink = styled(Link)`
   box-shadow: 0 2px 0 0 #ffffff;
   color: #ffffff;
   text-decoration: none;
@@ -61,7 +61,7 @@ const StyledAnchorLink = styled(AnchorLink)`
   &:focus {
     outline: 2px solid hsl(183, 73%, 32%);
   }
-`;
+`
 
 const FooterComponent = () => (
   <Footer id="footer">
@@ -69,11 +69,11 @@ const FooterComponent = () => (
     <div>
       <h3>Site Links</h3>
       <UL>
-        <li><StyledAnchorLink href="#quality">QUALITY</StyledAnchorLink></li>
-        <li><StyledAnchorLink href="#benefits">BENEFITS</StyledAnchorLink></li>
-        <li><StyledAnchorLink href="#credentials">CREDENTIALS</StyledAnchorLink></li>
-        <li><StyledAnchorLink href="#clients">CLIENTS</StyledAnchorLink></li>
-        <li><StyledAnchorLink href="#form">CONTACT</StyledAnchorLink></li>
+        <li><FooterLink to="/">HOME</FooterLink></li>
+        <li><FooterLink to="/about">ABOUT</FooterLink></li>
+        <li><FooterLink to="/benefits">BENEFITS</FooterLink></li>
+        <li><FooterLink to="/work">WORK</FooterLink></li>
+        <li><FooterLink to="/contact">CONTACT</FooterLink></li>
       </UL>
     </div>
     <div>
@@ -94,6 +94,6 @@ const FooterComponent = () => (
       &copy; 1989&ndash;{new Date().getFullYear()} Victor Construction, Inc. (VCI). All rights reserved.
     </CenteredCopyright>
   </Footer>
-);
+)
 
-export default FooterComponent;
+export default FooterComponent

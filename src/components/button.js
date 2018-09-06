@@ -1,9 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 const StyledButton = styled.button`
 
+  align-self: center;
   background: ${props => (props.form ? 'linear-gradient(hsl(183, 73%, 32%), hsl(180, 73%, 32%))' : 'linear-gradient(hsl(50, 85%, 61%), hsl(48, 85%, 61%))')};
   border-radius: 2px;
   border: none;
@@ -30,12 +31,12 @@ const StyledButton = styled.button`
     box-shadow: 0 1px 0 0 hsla(270, 2%, 25%, .3);
     background: linear-gradient(hsl(53, 85%, 61%), hsl(55, 85%, 61%));
   }
-`;
+`
 
-const Button = ({ text, ...rest }) => <StyledButton {...rest}>{text}</StyledButton>;
+const Button = ({ text, ...rest }) => <StyledButton {...rest}>{text}</StyledButton>
 
 Button.propTypes = {
-  text: PropTypes.string.isRequired,
-};
+  text: PropTypes.string.isRequired
+}
 
-export default Button;
+export default Button
