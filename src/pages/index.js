@@ -48,6 +48,10 @@ const Hero = styled.div`
     z-index: 1;
   }
 
+  & button {
+    margin-bottom: 6vw;
+  }
+
   @media (min-width: 30em) {
     height: 50vw;
   }
