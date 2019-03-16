@@ -1,4 +1,0 @@
-[context.deploy-preview.environment]
-    NODE_VERSION = "10.4.1"
-[context.production.environment]
-    NODE_VERSION = "10.4.1"
