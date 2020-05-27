@@ -1,17 +1,22 @@
-import React from 'react'
-import propTypes from 'prop-types'
-import styled from 'styled-components'
-import Image from 'gatsby-image'
-import Button from '../components/button'
-import { push } from 'gatsby-link'
-
-import heroDecoratorTopRight from '../images/hero_top-right.svg'
-import heroDecoratorBottom from '../images/hero_bottom.svg'
-import bullet from '../images/bullet.png'
+import { graphql } from "gatsby";
+import Image from "gatsby-image";
+import { push } from "gatsby-link";
+import propTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
+import Button from "../components/button";
+import Layout from "../components/layout";
+import bullet from "../images/bullet.png";
+import heroDecoratorBottom from "../images/hero_bottom.svg";
+import heroDecoratorTopRight from "../images/hero_top-right.svg";
 
 const Hero = styled.div`
   align-items: center;
-  background-image: linear-gradient(to right, hsla(183, 71%, 15%, .6), hsla(179, 71%, 15%, .6));
+  background-image: linear-gradient(
+    to right,
+    hsla(183, 71%, 15%, 0.6),
+    hsla(179, 71%, 15%, 0.6)
+  );
   display: flex;
   flex-direction: column;
   height: 60vw;
@@ -24,7 +29,7 @@ const Hero = styled.div`
   &::before {
     background-image: url(${heroDecoratorTopRight});
     background-repeat: no-repeat;
-    content: '';
+    content: "";
     height: 0;
     padding-bottom: 33%;
     position: absolute;
@@ -40,7 +45,7 @@ const Hero = styled.div`
     background-position: top;
     background-size: 110%;
     bottom: -7.5vw;
-    content: '';
+    content: "";
     height: 0;
     padding-bottom: 8vw;
     position: absolute;
@@ -59,15 +64,15 @@ const Hero = styled.div`
   @media (min-width: 60em) {
     height: 40vw;
   }
-`
+`;
 
 const HeroTitle = styled.h1`
   color: #ffffff;
-  font-size: calc(.75em + 2vw);
+  font-size: calc(0.75em + 2vw);
   letter-spacing: 1px;
   text-align: center;
   margin-bottom: 3vw;
-`
+`;
 
 const HeroImage = styled.div`
   height: 60vw;
@@ -78,7 +83,7 @@ const HeroImage = styled.div`
   width: 100%;
   z-index: -1;
 
-  & .gatsby-image-outer-wrapper {
+  & .gatsby-image-wrapper {
     top: -10vw;
   }
 
@@ -89,11 +94,11 @@ const HeroImage = styled.div`
   @media (min-width: 60em) {
     height: 40vw;
 
-    & .gatsby-image-outer-wrapper {
+    & .gatsby-image-wrapper {
       top: -15vw;
     }
   }
-`
+`;
 
 const Section = styled.section`
   margin: 0 auto;
@@ -105,15 +110,14 @@ const Section = styled.section`
       max-width: 80em;
     }
   }
-`
+`;
 
-const QualitySection = Section.extend`
-
+const QualitySection = styled(Section)`
   & ul {
     margin-left: 2em;
   }
 
-  .gatsby-image-outer-wrapper {
+  .gatsby-image-wrapper {
     margin: 1em auto;
     max-width: 37.5em;
   }
@@ -135,7 +139,7 @@ const QualitySection = Section.extend`
       justify-self: start;
     }
 
-    & > .gatsby-image-outer-wrapper {
+    & > .gatsby-image-wrapper {
       align-self: center;
       grid-column: 3 / span 2;
       margin: 0 0 0 1em;
@@ -159,10 +163,9 @@ const QualitySection = Section.extend`
       justify-self: start;
     }
   }
+`;
 
-`
-
-const DarkSection = Section.extend`
+const DarkSection = styled(Section)`
   background: hsl(270, 2%, 42%);
   color: #ffffff;
   display: flex;
@@ -183,7 +186,7 @@ const DarkSection = Section.extend`
     color: #ffffff;
     flex: 1 0 100%;
     letter-spacing: 1px;
-    margin-top: .5em;
+    margin-top: 0.5em;
     margin-right: 1em;
   }
 
@@ -201,122 +204,151 @@ const DarkSection = Section.extend`
 
   @media (min-width: 40em) {
     & > ul > li {
-    flex: 0 1 33%;
+      flex: 0 1 33%;
+    }
   }
-  }
-`
+`;
 
 const UL = styled.ul`
   list-style-image: url(${bullet});
   margin-left: 1.5em;
-`
+`;
 
 const IndexPage = ({ data }) => {
-  const date = `${new Date().getFullYear() - 1989} Years` || 'Decades'
+  const date = `${new Date().getFullYear() - 1989} Years`;
 
   return (
-    <main>
-      <Hero>
-        <HeroTitle>{date} of Construction and Concrete Services. 8(a)&#8209;certified.</HeroTitle>
-        <Button
-          text="See Why 8(a) Matters"
-          onClick={() => push('/benefits/')}
-        />
-        <HeroImage>
-          <Image
-            sizes={data.heroImage.localFile.childImageSharp.sizes}
-            alt={data.heroImage.alt_text}
+    <Layout>
+      <main>
+        <Hero>
+          <HeroTitle>
+            {date || "Decades"} of Construction and Concrete Services.
+            8(a)&#8209;certified.
+          </HeroTitle>
+          <Button
+            text="See Why 8(a) Matters"
+            onClick={() => push("/benefits/")}
           />
-        </HeroImage>
-      </Hero>
-      <QualitySection id="quality">
-        <h2>Quality that Stands the Test of Time</h2>
-        <p>Founded in 1989, VICTOR Construction, Inc. (VCI) is a family-owned and operated business based out of Riverside, CA. VCI specializes in construction, concrete paving, and other specialty concrete services for federal, state, and public works agencies and industrial and commercial clients in California. VCI provides quality workmanship at a fair price while protecting the health and safety of its employees and the surrounding community.</p>
-        <Image sizes={data.tiltUp.localFile.childImageSharp.sizes} alt={data.tiltUp.alt_text} />
-        <p>VCI&rsquo;s team of construction and concrete specialists adhere to ACI (American Concrete Institute), PCA (Portland Cement Association), and ASTM (American Society of Testing Materials) guidelines for properly placing concrete. VCI ensures:</p>
-        <UL>
-          <li>Proper preparation of the sub-base</li>
-          <li>Accurate forming, layout, and proper elevations for water run-off</li>
-          <li>Correct placement of reinforcements and imbeds</li>
-          <li>Use of quality designs and mix providers</li>
-          <li>Use of specific admixtures and retarders for placement and addressing weather conditions</li>
-          <li>Proper planning and placement of control joints, and isolation joints</li>
-          <li>Quality finish work using ACI standards for proper techniques and tools for each slab&rsquo;s use and design</li>
-          <li>Timely use of curing compounds and sealers</li>
-        </UL>
-        <Image sizes={data.spread.localFile.childImageSharp.sizes} alt={data.spread.alt_text} />
-        <Button
-          text="Contact Us"
-          onClick={() => push('/contact/')}
-        />
-      </QualitySection>
-      <DarkSection>
-        <h2>Our Expertise</h2>
-        <UL>
-          <li>Site Concrete</li>
-          <li>Structural Concrete</li>
-          <li>Concrete Paving</li>
-          <li>Road/Highway Construction</li>
-          <li>Flatwork</li>
-          <li>Demolition</li>
-          <li>Debris Removal</li>
-          <li>Grading</li>
-          <li>Site Restoration and Landscaping</li>
-          <li>ADA/OSHPD Compliance</li>
-          <li>Horizontal Construction</li>
-        </UL>
-        <Button
-          text="See Our Work"
-          onClick={() => push('/work/')}
-        />
-      </DarkSection>
-    </main>
-  )
-}
+          <HeroImage>
+            <Image
+              fluid={data.heroImage.localFile.childImageSharp.sizes}
+              alt={data.heroImage.alt_text}
+            />
+          </HeroImage>
+        </Hero>
+        <QualitySection id="quality">
+          <h2>Quality that Stands the Test of Time</h2>
+          <p>
+            Founded in 1989, VICTOR Construction, Inc. (VCI) is a family-owned
+            and operated business based out of Riverside, CA. VCI specializes in
+            construction, concrete paving, and other specialty concrete services
+            for federal, state, and public works agencies and industrial and
+            commercial clients in California. VCI provides quality workmanship
+            at a fair price while protecting the health and safety of its
+            employees and the surrounding community.
+          </p>
+          <Image
+            fluid={data.tiltUp.localFile.childImageSharp.sizes}
+            alt={data.tiltUp.alt_text}
+          />
+          <p>
+            VCI&rsquo;s team of construction and concrete specialists adhere to
+            ACI (American Concrete Institute), PCA (Portland Cement
+            Association), and ASTM (American Society of Testing Materials)
+            guidelines for properly placing concrete. VCI ensures:
+          </p>
+          <UL>
+            <li>Proper preparation of the sub-base</li>
+            <li>
+              Accurate forming, layout, and proper elevations for water run-off
+            </li>
+            <li>Correct placement of reinforcements and imbeds</li>
+            <li>Use of quality designs and mix providers</li>
+            <li>
+              Use of specific admixtures and retarders for placement and
+              addressing weather conditions
+            </li>
+            <li>
+              Proper planning and placement of control joints, and isolation
+              joints
+            </li>
+            <li>
+              Quality finish work using ACI standards for proper techniques and
+              tools for each slab&rsquo;s use and design
+            </li>
+            <li>Timely use of curing compounds and sealers</li>
+          </UL>
+          <Image
+            fluid={data.spread.localFile.childImageSharp.sizes}
+            alt={data.spread.alt_text}
+          />
+          <Button text="Contact Us" onClick={() => push("/contact/")} />
+        </QualitySection>
+        <DarkSection>
+          <h2>Our Expertise</h2>
+          <UL>
+            <li>Site Concrete</li>
+            <li>Structural Concrete</li>
+            <li>Concrete Paving</li>
+            <li>Road/Highway Construction</li>
+            <li>Flatwork</li>
+            <li>Demolition</li>
+            <li>Debris Removal</li>
+            <li>Grading</li>
+            <li>Site Restoration and Landscaping</li>
+            <li>ADA/OSHPD Compliance</li>
+            <li>Horizontal Construction</li>
+          </UL>
+          <Button text="See Our Work" onClick={() => push("/work/")} />
+        </DarkSection>
+      </main>
+    </Layout>
+  );
+};
 
 IndexPage.propTypes = {
   data: propTypes.shape({
     heroImage: propTypes.object.isRequired,
     tiltUp: propTypes.object.isRequired,
-    spread: propTypes.object.isRequired
-  }).isRequired
-}
+    spread: propTypes.object.isRequired,
+  }).isRequired,
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const query = graphql`
-query IndexPage {
-  heroImage: wordpressWpMedia(title: {eq: "hero-image"}) {
-    alt_text
-    localFile {
-      childImageSharp {
-        sizes(maxWidth: 1080) {
-          ...GatsbyImageSharpSizes_tracedSVG
+  query IndexPage {
+    heroImage: wordpressWpMedia(title: { eq: "hero-image" }) {
+      alt_text
+      localFile {
+        childImageSharp {
+          sizes(maxWidth: 1080) {
+            ...GatsbyImageSharpSizes_tracedSVG
+          }
         }
       }
     }
-  }
 
-  tiltUp: wordpressWpMedia(title: {eq: "tilt-up"}) {
-    alt_text
-    localFile {
-      childImageSharp {
-        sizes(maxWidth: 600) {
-          ...GatsbyImageSharpSizes
+    tiltUp: wordpressWpMedia(title: { eq: "tilt-up" }) {
+      alt_text
+      localFile {
+        childImageSharp {
+          sizes(maxWidth: 600) {
+            ...GatsbyImageSharpSizes
+          }
         }
       }
     }
-  }
 
-  spread: wordpressWpMedia(title: {eq: "concrete-spread"}) {
-    alt_text
-    localFile {
-      childImageSharp {
-        sizes(maxWidth: 600) {
-          ...GatsbyImageSharpSizes
+    spread: wordpressWpMedia(title: { eq: "concrete-spread" }) {
+      alt_text
+      localFile {
+        childImageSharp {
+          sizes(maxWidth: 600) {
+            ...GatsbyImageSharpSizes
+          }
         }
       }
     }
   }
-}
-`
+`;
