@@ -47,6 +47,7 @@ const AboutPage = () => {
               webkitallowfullscreen
               mozallowfullscreen
               allowfullscreen
+              allow="fullscreen"
             />
           </Wrapper>
         </Section>
