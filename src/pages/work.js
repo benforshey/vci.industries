@@ -1,5 +1,4 @@
-import { graphql } from "gatsby";
-import { push } from "gatsby-link";
+import { graphql, navigate } from "gatsby";
 import propTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
@@ -283,7 +282,7 @@ const WorkPage = ({ data }) => {
         <Section id="clients">
           <h2>Join Our Recent Clients</h2>
           {clientList}
-          <Button text="Contact Us" onClick={() => push("/contact/")} />
+          <Button text="Contact Us" onClick={() => navigate("/contact/")} />
         </Section>
       </main>
     </Layout>

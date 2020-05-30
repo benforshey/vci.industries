@@ -1,6 +1,5 @@
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import Image from "gatsby-image";
-import { push } from "gatsby-link";
 import propTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -227,7 +226,7 @@ const IndexPage = ({ data }) => {
           </HeroTitle>
           <Button
             text="See Why 8(a) Matters"
-            onClick={() => push("/benefits/")}
+            onClick={() => navigate("/benefits/")}
           />
           <HeroImage>
             <Image
@@ -282,7 +281,7 @@ const IndexPage = ({ data }) => {
             fluid={data.spread.localFile.childImageSharp.sizes}
             alt={data.spread.alt_text}
           />
-          <Button text="Contact Us" onClick={() => push("/contact/")} />
+          <Button text="Contact Us" onClick={() => navigate("/contact/")} />
         </QualitySection>
         <DarkSection>
           <h2>Our Expertise</h2>
@@ -299,7 +298,7 @@ const IndexPage = ({ data }) => {
             <li>ADA/OSHPD Compliance</li>
             <li>Horizontal Construction</li>
           </UL>
-          <Button text="See Our Work" onClick={() => push("/work/")} />
+          <Button text="See Our Work" onClick={() => navigate("/work/")} />
         </DarkSection>
       </main>
     </Layout>

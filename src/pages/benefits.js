@@ -1,6 +1,5 @@
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import Image from "gatsby-image";
-import { push } from "gatsby-link";
 import propTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
@@ -130,7 +129,7 @@ const BenefitsPage = ({ data }) => {
               Pacific Sundance Construction
             </cite>
           </blockquote>
-          <Button text="Contact Us" onClick={() => push("/contact/")} />
+          <Button text="Contact Us" onClick={() => navigate("/contact/")} />
         </BenefitsSection>
       </main>
     </Layout>
