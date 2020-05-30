@@ -1,5 +1,4 @@
 import React from "react";
-import propTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import Header from "./header";
 import Footer from "./footer";
@@ -96,12 +95,5 @@ const Layout = ({ children }) => (
     )}
   />
 );
-
-Layout.propTypes = {
-  children: propTypes.func.isRequired,
-  data: propTypes.shape({
-    site: propTypes.object.isRequired,
-  }).isRequired,
-};
 
 export default Layout;
